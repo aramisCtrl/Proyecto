@@ -52,6 +52,7 @@ namespace SongQuiz
 			this.btn_rock = new System.Windows.Forms.Button();
 			this.btn_rap = new System.Windows.Forms.Button();
 			this.btn_pop = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
 			this.pnl_botones.SuspendLayout();
@@ -60,6 +61,7 @@ namespace SongQuiz
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.Transparent;
+			this.panel1.Controls.Add(this.button2);
 			this.panel1.Controls.Add(this.pic_logo);
 			this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -294,6 +296,16 @@ namespace SongQuiz
 			this.btn_pop.UseVisualStyleBackColor = true;
 			this.btn_pop.Click += new System.EventHandler(this.Btn_partidaClick);
 			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(13, 23);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
+			this.button2.TabIndex = 1;
+			this.button2.Text = "button2";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.Button2Click);
+			// 
 			// FormMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,6 +328,7 @@ namespace SongQuiz
 			this.pnl_botones.PerformLayout();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button btn_pop;
 		private System.Windows.Forms.Button btn_rap;
 		private System.Windows.Forms.Button btn_rock;

@@ -36,106 +36,201 @@ namespace SongQuiz
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label1 = new System.Windows.Forms.Label();
-			this.pic_central = new System.Windows.Forms.PictureBox();
+			this.components = new System.ComponentModel.Container();
+			this.tmr_tiempo = new System.Windows.Forms.Timer(this.components);
+			this.button1 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.button4 = new System.Windows.Forms.Button();
+			this.lbl_timer = new System.Windows.Forms.Label();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.button5 = new System.Windows.Forms.Button();
+			this.button6 = new System.Windows.Forms.Button();
+			this.button7 = new System.Windows.Forms.Button();
+			this.button8 = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.pictureBox5 = new System.Windows.Forms.PictureBox();
-			((System.ComponentModel.ISupportInitialize)(this.pic_central)).BeginInit();
+			this.panel2.SuspendLayout();
+			this.tableLayoutPanel1.SuspendLayout();
+			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// label1
+			// tmr_tiempo
 			// 
-			this.label1.Location = new System.Drawing.Point(1124, 24);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(116, 116);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "label1";
+			this.tmr_tiempo.Interval = 1100;
+			this.tmr_tiempo.Tick += new System.EventHandler(this.Tmr_tiempoTick);
 			// 
-			// pic_central
+			// button1
 			// 
-			this.pic_central.Location = new System.Drawing.Point(467, 24);
-			this.pic_central.Name = "pic_central";
-			this.pic_central.Size = new System.Drawing.Size(382, 394);
-			this.pic_central.TabIndex = 1;
-			this.pic_central.TabStop = false;
+			this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button1.Location = new System.Drawing.Point(3, 3);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(516, 69);
+			this.button1.TabIndex = 0;
+			this.button1.Text = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button2.Location = new System.Drawing.Point(525, 3);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(516, 69);
+			this.button2.TabIndex = 1;
+			this.button2.Text = "button2";
+			this.button2.UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button3.Location = new System.Drawing.Point(3, 78);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(516, 70);
+			this.button3.TabIndex = 2;
+			this.button3.Text = "button3";
+			this.button3.UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button4.Location = new System.Drawing.Point(525, 78);
+			this.button4.Name = "button4";
+			this.button4.Size = new System.Drawing.Size(516, 70);
+			this.button4.TabIndex = 3;
+			this.button4.Text = "button4";
+			this.button4.UseVisualStyleBackColor = true;
+			// 
+			// lbl_timer
+			// 
+			this.lbl_timer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.lbl_timer.Font = new System.Drawing.Font("Arial", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_timer.ForeColor = System.Drawing.Color.RoyalBlue;
+			this.lbl_timer.Location = new System.Drawing.Point(1047, 9);
+			this.lbl_timer.Name = "lbl_timer";
+			this.lbl_timer.Size = new System.Drawing.Size(160, 160);
+			this.lbl_timer.TabIndex = 0;
+			this.lbl_timer.Text = "lbl_timer";
+			this.lbl_timer.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
+			// panel2
+			// 
+			this.panel2.Controls.Add(this.tableLayoutPanel1);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel2.Location = new System.Drawing.Point(0, 636);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(1236, 187);
+			this.panel2.TabIndex = 2;
+			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.ColumnCount = 2;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Controls.Add(this.button5, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.button6, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.button7, 1, 0);
+			this.tableLayoutPanel1.Controls.Add(this.button8, 1, 1);
+			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 2;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1236, 187);
+			this.tableLayoutPanel1.TabIndex = 1;
+			// 
+			// button5
+			// 
+			this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button5.Location = new System.Drawing.Point(3, 3);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(612, 87);
+			this.button5.TabIndex = 0;
+			this.button5.Text = "button5";
+			this.button5.UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button6.Location = new System.Drawing.Point(3, 96);
+			this.button6.Name = "button6";
+			this.button6.Size = new System.Drawing.Size(612, 88);
+			this.button6.TabIndex = 1;
+			this.button6.Text = "button6";
+			this.button6.UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button7.Location = new System.Drawing.Point(621, 3);
+			this.button7.Name = "button7";
+			this.button7.Size = new System.Drawing.Size(612, 87);
+			this.button7.TabIndex = 2;
+			this.button7.Text = "button7";
+			this.button7.UseVisualStyleBackColor = true;
+			// 
+			// button8
+			// 
+			this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.button8.Location = new System.Drawing.Point(621, 96);
+			this.button8.Name = "button8";
+			this.button8.Size = new System.Drawing.Size(612, 88);
+			this.button8.TabIndex = 3;
+			this.button8.Text = "button8";
+			this.button8.UseVisualStyleBackColor = true;
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.pictureBox1);
+			this.panel1.Controls.Add(this.lbl_timer);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(1236, 636);
+			this.panel1.TabIndex = 3;
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Location = new System.Drawing.Point(26, 24);
+			this.pictureBox1.Location = new System.Drawing.Point(178, 100);
+			this.pictureBox1.Margin = new System.Windows.Forms.Padding(100);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(116, 116);
-			this.pictureBox1.TabIndex = 2;
+			this.pictureBox1.Size = new System.Drawing.Size(884, 514);
+			this.pictureBox1.TabIndex = 1;
 			this.pictureBox1.TabStop = false;
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Location = new System.Drawing.Point(26, 555);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(116, 116);
-			this.pictureBox2.TabIndex = 3;
-			this.pictureBox2.TabStop = false;
-			// 
-			// pictureBox3
-			// 
-			this.pictureBox3.Location = new System.Drawing.Point(26, 423);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(116, 116);
-			this.pictureBox3.TabIndex = 4;
-			this.pictureBox3.TabStop = false;
-			// 
-			// pictureBox4
-			// 
-			this.pictureBox4.Location = new System.Drawing.Point(26, 289);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(116, 116);
-			this.pictureBox4.TabIndex = 5;
-			this.pictureBox4.TabStop = false;
-			// 
-			// pictureBox5
-			// 
-			this.pictureBox5.Location = new System.Drawing.Point(26, 157);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(116, 116);
-			this.pictureBox5.TabIndex = 6;
-			this.pictureBox5.TabStop = false;
 			// 
 			// FormPartida
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1264, 694);
-			this.Controls.Add(this.pictureBox5);
-			this.Controls.Add(this.pictureBox4);
-			this.Controls.Add(this.pictureBox3);
-			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.pictureBox1);
-			this.Controls.Add(this.pic_central);
-			this.Controls.Add(this.label1);
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ClientSize = new System.Drawing.Size(1236, 823);
+			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.panel2);
 			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "FormPartida";
 			this.Text = "FormPartida";
-			((System.ComponentModel.ISupportInitialize)(this.pic_central)).EndInit();
+			this.panel2.ResumeLayout(false);
+			this.tableLayoutPanel1.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.PictureBox pictureBox5;
-		private System.Windows.Forms.PictureBox pictureBox4;
-		private System.Windows.Forms.PictureBox pictureBox3;
-		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.PictureBox pic_central;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button button8;
+		private System.Windows.Forms.Button button7;
+		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.Button button5;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Timer tmr_tiempo;
+		private System.Windows.Forms.Button button4;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Label lbl_timer;
 	}
 }

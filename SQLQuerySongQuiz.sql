@@ -322,6 +322,4 @@ left join canciones on canc_id = caop_canc_id
 where caop_canc_id = @id
 end
 
-
-
 exec sp_ObtenerOpciones 1

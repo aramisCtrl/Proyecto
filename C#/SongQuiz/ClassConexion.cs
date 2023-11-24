@@ -3,11 +3,9 @@ using System.Data;
 using System.Windows.Forms;
 using System;
 using System.IO;
-using System.Xml;
 
 public class ClassConexionSQL
 {
-
 	public SqlConnection conexion;
 
 	public bool Conectar()
@@ -54,7 +52,7 @@ public class ClassConexionSQL
 	{
 		try
 		{
-			string strConexion = String.Format("Server=localhost;Database=bd_quiz; integrated security = true");
+			string strConexion = String.Format("Server=localhost;Database={0}; integrated security = true", "bd_quiz");
 			conexion = new SqlConnection(strConexion);
 			return true;
 		}
@@ -63,28 +61,21 @@ public class ClassConexionSQL
 			return false;
 		}
 	}
-	
+
 	public bool LLenarGrid(ref DataGridView grid, string Consulta)
 	{
 		try
 		{
-			// Se abre la conexion
 			if (this.Conectar())
 			{
-				// Se crea un MySqlAdapter para obtener los datos de la base
 				SqlDataAdapter adaptadorDatos = new SqlDataAdapter(Consulta, conexion);
 
-				//crea un datatable
 				DataTable dtDatos = new DataTable();
 
-				// Con la información del adaptador se rellena el DataTable
 				adaptadorDatos.Fill(dtDatos);
-
-				//se asigna el contenido del datatable a la grilla
 
 				grid.DataSource = dtDatos;
 				
-				// Se cierra la conexión a la base de datos
 				this.Desconectar();
 
 				return true;
@@ -100,22 +91,19 @@ public class ClassConexionSQL
 		}
 	}
 	
+
 	public DataRow ObtenerData(String Consulta)
 	{
 		try
 		{
-			// Se abre la conexion
 			if (this.Conectar())
 			{
-				// Se crea un MySqlAdapter para obtener los datos de la base
 				SqlDataAdapter adaptadorDatos = new SqlDataAdapter(Consulta, conexion);
 
-				//crea un datatable
 				DataTable dtDatos = new DataTable();
 
 				adaptadorDatos.Fill(dtDatos);
 
-				// Se cierra la conexión a la base de datos
 				this.Desconectar();
 
 				return dtDatos.Rows[0];
@@ -130,7 +118,6 @@ public class ClassConexionSQL
 			return null;
 		}
 	}
-	
 	public void EjecutarComandoSQL(string sql)
 	{
 		if (this.Conectar())
@@ -171,16 +158,12 @@ public class ClassConexionSQL
 		{
 			if (this.Conectar())
 			{
-				// Se crea un SqlDataAdapter para obtener los datos de la base
 				SqlDataAdapter adaptadorDatos = new SqlDataAdapter(consulta, conexion);
 
-				// Se crea un DataSet para almacenar el resultado de la consulta
 				DataSet dsResultado = new DataSet();
 
-				// Llena el DataSet con los datos obtenidos de la consulta
 				adaptadorDatos.Fill(dsResultado);
 
-				// Cierra la conexión a la base de datos
 				this.Desconectar();
 
 				return dsResultado;
@@ -192,8 +175,7 @@ public class ClassConexionSQL
 		}
 		catch (Exception ex)
 		{
-			MessageBox.Show("Error al ejecutar sentencia: " + ex.Message + "\n" + ex.StackTrace);
-
+			MessageBox.Show("Error al ejecutar sentencia: " + ex.Message);
 			return null;
 		}
 	}

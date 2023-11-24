@@ -94,6 +94,13 @@ namespace SongQuiz
 		    }
 		    
 		}
+		
+		void Button2Click(object sender, EventArgs e)
+		{
+			FormPartida form = new FormPartida();
+			form.ShowDialog();
+			this.Hide();
+		}
     }
 }
 
