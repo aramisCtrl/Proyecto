@@ -29,14 +29,20 @@ namespace SongQuiz
 		    mipartida.categoria_id = int.Parse(btn_aux.Tag.ToString());
 		
 		    DataSet dsDatos = new DataSet();
-		    dsDatos = miconexion.EjecutarSentencia("exec sp_ObtenerCanciones " + mipartida.categoria_id);
-		
-		    // Verificar si el DataSet tiene una tabla y al menos una fila
+		    
+		    if(mipartida.categoria_id == 6)
+		    {
+		    	dsDatos = miconexion.EjecutarSentencia("exec sp_ObtenerCancionesMix");
+		    }
+		    else
+		    {
+		    	dsDatos = miconexion.EjecutarSentencia("exec sp_ObtenerCanciones " + mipartida.categoria_id);
+		    }
+		    
 		    if (dsDatos != null && dsDatos.Tables.Count > 0 && dsDatos.Tables[0].Rows.Count > 0)
 		    {
 		        DataTable tabla = dsDatos.Tables[0];
 		
-		        // Inicializar las propiedades del objeto ClassPartida con los datos del DataSet
 		        int rowCount = tabla.Rows.Count;
 		
 		        mipartida.cancion_id = new int[rowCount];
@@ -57,9 +63,36 @@ namespace SongQuiz
 		    }
 		    else
 		    {
-		        // Manejar el caso en el que no se devuelvan datos
 		        MessageBox.Show("No se encontraron datos para la categoría especificada.");
 		    }
+		    ////////////
+		    
+		    for(int i=0; i<5; i++){
+		    	dsDatos = miconexion.EjecutarSentencia("exec sp_ObtenerOpciones");
+		    	if (dsDatos != null && dsDatos.Tables.Count > 0 && dsDatos.Tables[0].Rows.Count > 0)
+		    	{
+			        DataTable tabla = dsDatos.Tables[0];
+			
+			        int rowCount = tabla.Rows.Count;
+			
+			        mipartida.cancion_id = new int[rowCount];
+			        mipartida.cancion = new string[rowCount];
+			        mipartida.artista = new string[rowCount];
+			        mipartida.direccion = new string[rowCount];
+			        mipartida.portada_direccion = new string[rowCount];
+			
+			        for (int j = 0; j < rowCount; j++)
+			        {
+			            DataRow row = tabla.Rows[j];
+			            mipartida.opciones[j] = row.Field<string>("opci_descripcion");
+			        }
+			    }
+			    else
+			    {
+		        	MessageBox.Show("No se encontraron datos para la categoría especificada.");
+		    	}
+		    }
+		    
 		}
     }
 }

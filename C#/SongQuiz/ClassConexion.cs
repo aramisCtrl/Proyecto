@@ -192,7 +192,8 @@ public class ClassConexionSQL
 		}
 		catch (Exception ex)
 		{
-			MessageBox.Show("Error al ejecutar sentencia: " + ex.Message);
+			MessageBox.Show("Error al ejecutar sentencia: " + ex.Message + "\n" + ex.StackTrace);
+
 			return null;
 		}
 	}

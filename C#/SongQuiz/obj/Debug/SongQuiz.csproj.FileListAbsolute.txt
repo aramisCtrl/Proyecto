@@ -15,3 +15,12 @@ C:\Users\Fiski\Desktop\SongQuiz\C#\SongQuiz\obj\Debug\SongQuiz.csproj.GenerateRe
 C:\Users\Fiski\Desktop\SongQuiz\C#\SongQuiz\obj\Debug\SongQuiz.exe
 C:\Users\Fiski\Desktop\SongQuiz\C#\SongQuiz\obj\Debug\SongQuiz.pdb
 C:\Users\Fiski\Desktop\SongQuiz\C#\SongQuiz\obj\Debug\SongQuiz.FormPartida.resources
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\bin\Debug\SongQuiz.exe
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\bin\Debug\SongQuiz.pdb
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\obj\Debug\SongQuiz.csprojResolveAssemblyReference.cache
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\obj\Debug\SongQuiz.FormMenu.resources
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\obj\Debug\SongQuiz.FormPartida.resources
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\obj\Debug\SongQuiz.MainForm.resources
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\obj\Debug\SongQuiz.csproj.GenerateResource.Cache
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\obj\Debug\SongQuiz.exe
+C:\Users\Fiski\Documents\GitHub\Proyecto\C#\SongQuiz\obj\Debug\SongQuiz.pdb

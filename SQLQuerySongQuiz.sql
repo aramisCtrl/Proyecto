@@ -293,15 +293,6 @@ inner join canciones_opciones on caop_canc_id = canc_id
 inner join opciones on opci_id = caop_opci_id
 
 create procedure sp_ObtenerCanciones(
-	@categoria int 
-)
-as
-begin
-select canc_id, canc_nombre, canc_artista, canc_direccion, canc_portada_direccion from canciones
-where canc_cate_id = @categoria
-end
-
-create procedure sp_ObtenerCanciones(
     @categoria int
 )
 as
@@ -309,6 +300,14 @@ begin
     select top 5 canc_id, canc_nombre, canc_artista, canc_direccion, canc_portada_direccion 
     from canciones
     where canc_cate_id = @categoria
+    order by NEWID();
+end
+
+create procedure sp_ObtenerCancionesMix
+as
+begin
+    select top 5 canc_id, canc_nombre, canc_artista, canc_direccion, canc_portada_direccion 
+    from canciones
     order by NEWID();
 end
 
@@ -323,4 +322,6 @@ left join canciones on canc_id = caop_canc_id
 where caop_canc_id = @id
 end
 
-exec sp_ObtenerCanciones 1
+
+
+exec sp_ObtenerOpciones 1
