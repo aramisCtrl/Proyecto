@@ -38,7 +38,6 @@ namespace SongQuiz
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.button2 = new System.Windows.Forms.Button();
 			this.pic_logo = new System.Windows.Forms.PictureBox();
 			this.pnl_botones = new System.Windows.Forms.Panel();
 			this.button11 = new System.Windows.Forms.Button();
@@ -61,35 +60,25 @@ namespace SongQuiz
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.Transparent;
-			this.panel1.Controls.Add(this.button2);
 			this.panel1.Controls.Add(this.pic_logo);
 			this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1122, 191);
+			this.panel1.Size = new System.Drawing.Size(1122, 227);
 			this.panel1.TabIndex = 1;
-			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(13, 23);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// pic_logo
 			// 
-			this.pic_logo.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pic_logo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
 			this.pic_logo.BackColor = System.Drawing.Color.Transparent;
 			this.pic_logo.Cursor = System.Windows.Forms.Cursors.Default;
 			this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
 			this.pic_logo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.pic_logo.Location = new System.Drawing.Point(0, 0);
+			this.pic_logo.Location = new System.Drawing.Point(-1, 39);
 			this.pic_logo.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
 			this.pic_logo.Name = "pic_logo";
-			this.pic_logo.Size = new System.Drawing.Size(1120, 191);
+			this.pic_logo.Size = new System.Drawing.Size(1120, 188);
 			this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_logo.TabIndex = 0;
 			this.pic_logo.TabStop = false;
@@ -111,9 +100,9 @@ namespace SongQuiz
 			this.pnl_botones.Controls.Add(this.btn_pop);
 			this.pnl_botones.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.pnl_botones.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pnl_botones.Location = new System.Drawing.Point(0, 191);
+			this.pnl_botones.Location = new System.Drawing.Point(0, 227);
 			this.pnl_botones.Name = "pnl_botones";
-			this.pnl_botones.Size = new System.Drawing.Size(1122, 766);
+			this.pnl_botones.Size = new System.Drawing.Size(1122, 730);
 			this.pnl_botones.TabIndex = 3;
 			// 
 			// button11
@@ -124,7 +113,7 @@ namespace SongQuiz
 			this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button11.ForeColor = System.Drawing.Color.YellowGreen;
 			this.button11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button11.Location = new System.Drawing.Point(462, 276);
+			this.button11.Location = new System.Drawing.Point(463, 371);
 			this.button11.Name = "button11";
 			this.button11.Size = new System.Drawing.Size(200, 42);
 			this.button11.TabIndex = 3;
@@ -133,14 +122,14 @@ namespace SongQuiz
 			// 
 			// button10
 			// 
-			this.button10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button10.AutoSize = true;
 			this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button10.ForeColor = System.Drawing.Color.Gold;
 			this.button10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button10.Location = new System.Drawing.Point(819, 275);
+			this.button10.Location = new System.Drawing.Point(594, 371);
 			this.button10.Name = "button10";
 			this.button10.Size = new System.Drawing.Size(200, 42);
 			this.button10.TabIndex = 5;
@@ -155,7 +144,7 @@ namespace SongQuiz
 			this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button9.Location = new System.Drawing.Point(107, 604);
+			this.button9.Location = new System.Drawing.Point(463, 700);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(200, 42);
 			this.button9.TabIndex = 7;
@@ -164,13 +153,12 @@ namespace SongQuiz
 			// 
 			// button8
 			// 
-			this.button8.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.button8.AutoSize = true;
 			this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button8.ForeColor = System.Drawing.Color.Chartreuse;
 			this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button8.Location = new System.Drawing.Point(462, 604);
+			this.button8.Location = new System.Drawing.Point(338, 700);
 			this.button8.Name = "button8";
 			this.button8.Size = new System.Drawing.Size(200, 42);
 			this.button8.TabIndex = 9;
@@ -179,13 +167,13 @@ namespace SongQuiz
 			// 
 			// button7
 			// 
-			this.button7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.button7.AutoSize = true;
 			this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button7.ForeColor = System.Drawing.Color.LightBlue;
 			this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button7.Location = new System.Drawing.Point(819, 604);
+			this.button7.Location = new System.Drawing.Point(594, 700);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(200, 42);
 			this.button7.TabIndex = 11;
@@ -194,7 +182,6 @@ namespace SongQuiz
 			// 
 			// button1
 			// 
-			this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.button1.AutoSize = true;
 			this.button1.BackColor = System.Drawing.Color.Transparent;
 			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -202,7 +189,7 @@ namespace SongQuiz
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.ForeColor = System.Drawing.Color.Plum;
 			this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button1.Location = new System.Drawing.Point(107, 275);
+			this.button1.Location = new System.Drawing.Point(338, 371);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(200, 42);
 			this.button1.TabIndex = 1;
@@ -211,12 +198,12 @@ namespace SongQuiz
 			// 
 			// btn_mix
 			// 
-			this.btn_mix.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btn_mix.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btn_mix.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_mix.BackgroundImage")));
 			this.btn_mix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_mix.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_mix.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_mix.Location = new System.Drawing.Point(792, 348);
+			this.btn_mix.Location = new System.Drawing.Point(567, 443);
 			this.btn_mix.Name = "btn_mix";
 			this.btn_mix.Size = new System.Drawing.Size(250, 250);
 			this.btn_mix.TabIndex = 10;
@@ -233,7 +220,7 @@ namespace SongQuiz
 			this.btn_kpop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_kpop.ForeColor = System.Drawing.Color.Snow;
 			this.btn_kpop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_kpop.Location = new System.Drawing.Point(435, 348);
+			this.btn_kpop.Location = new System.Drawing.Point(436, 443);
 			this.btn_kpop.Name = "btn_kpop";
 			this.btn_kpop.Size = new System.Drawing.Size(250, 250);
 			this.btn_kpop.TabIndex = 8;
@@ -243,14 +230,14 @@ namespace SongQuiz
 			// 
 			// btn_latino
 			// 
-			this.btn_latino.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btn_latino.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btn_latino.AutoSize = true;
 			this.btn_latino.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_latino.BackgroundImage")));
 			this.btn_latino.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_latino.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_latino.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_latino.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_latino.Location = new System.Drawing.Point(792, 19);
+			this.btn_latino.Location = new System.Drawing.Point(567, 114);
 			this.btn_latino.Name = "btn_latino";
 			this.btn_latino.Size = new System.Drawing.Size(250, 250);
 			this.btn_latino.TabIndex = 4;
@@ -265,7 +252,7 @@ namespace SongQuiz
 			this.btn_rock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_rock.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_rock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_rock.Location = new System.Drawing.Point(435, 19);
+			this.btn_rock.Location = new System.Drawing.Point(436, 114);
 			this.btn_rock.Name = "btn_rock";
 			this.btn_rock.Size = new System.Drawing.Size(250, 250);
 			this.btn_rock.TabIndex = 2;
@@ -275,12 +262,11 @@ namespace SongQuiz
 			// 
 			// btn_rap
 			// 
-			this.btn_rap.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btn_rap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_rap.BackgroundImage")));
 			this.btn_rap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_rap.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_rap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_rap.Location = new System.Drawing.Point(80, 348);
+			this.btn_rap.Location = new System.Drawing.Point(311, 443);
 			this.btn_rap.Name = "btn_rap";
 			this.btn_rap.Size = new System.Drawing.Size(250, 250);
 			this.btn_rap.TabIndex = 6;
@@ -290,14 +276,13 @@ namespace SongQuiz
 			// 
 			// btn_pop
 			// 
-			this.btn_pop.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.btn_pop.AutoSize = true;
 			this.btn_pop.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_pop.BackgroundImage")));
 			this.btn_pop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_pop.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_pop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_pop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_pop.Location = new System.Drawing.Point(80, 19);
+			this.btn_pop.Location = new System.Drawing.Point(311, 114);
 			this.btn_pop.Name = "btn_pop";
 			this.btn_pop.Size = new System.Drawing.Size(250, 250);
 			this.btn_pop.TabIndex = 0;
@@ -328,7 +313,6 @@ namespace SongQuiz
 			this.pnl_botones.PerformLayout();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button btn_pop;
 		private System.Windows.Forms.Button btn_rap;
 		private System.Windows.Forms.Button btn_rock;
