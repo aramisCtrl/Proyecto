@@ -332,3 +332,33 @@ SET canc_portada_blur_direccion = '\Imagenes\Portadas\Rock\Qué Ves_blur.jpg'
 Where canc_id = 36
 
 select * from canciones
+
+CREATE PROCEDURE sp_ValidarUsuario(
+    @NombreUsuario NVARCHAR(100),
+    @Contraseña NVARCHAR(100)
+)
+AS
+BEGIN
+    -- Declarar una variable para almacenar el ID de rol del usuario
+    DECLARE @usua_id INT;
+
+    -- Intentar encontrar un usuario con el nombre y contraseña proporcionados
+    SELECT @usua_id = usua_id
+    FROM usuarios
+    WHERE usua_nombre = @NombreUsuario
+      AND usua_contraseña = @Contraseña;
+
+    -- Comprobar si se encontró un usuario válido
+    IF @usua_id IS NOT NULL
+    BEGIN
+        -- Retornar el ID de rol del usuario
+        SELECT @usua_id AS usua_id;
+    END
+    ELSE
+    BEGIN
+        -- No se encontró un usuario válido, retornar 0
+        SELECT 0 AS usua_id;
+    END
+END;
+
+insert into usuarios(usua_nombre, usua_contraseña, usua_avat_id) values ('cachiflop', 'AramisYCiro123_', 10)

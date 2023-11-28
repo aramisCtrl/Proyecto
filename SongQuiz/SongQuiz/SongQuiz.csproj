@@ -65,6 +65,10 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNuevoUser.cs" />
+    <Compile Include="FormNuevoUser.Designer.cs">
+      <DependentUpon>FormNuevoUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPartida.cs" />
     <Compile Include="FormPartida.Designer.cs">
       <DependentUpon>FormPartida.cs</DependentUpon>
@@ -79,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNuevoUser.resx">
+      <DependentUpon>FormNuevoUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPartida.resx">
       <DependentUpon>FormPartida.cs</DependentUpon>

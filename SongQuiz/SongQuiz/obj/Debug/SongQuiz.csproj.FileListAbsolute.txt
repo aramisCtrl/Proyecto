@@ -33,3 +33,4 @@ C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.Ma
 C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.csproj.GenerateResource.Cache
 C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.exe
 C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.pdb
+C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.FormNuevoUser.resources

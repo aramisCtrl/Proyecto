@@ -197,6 +197,7 @@ namespace SongQuiz
 			// 
 			// panel1
 			// 
+			this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
 			this.panel1.Controls.Add(this.lbl_artista);
 			this.panel1.Controls.Add(this.lbl_cancion);
 			this.panel1.Controls.Add(this.pic_portada);

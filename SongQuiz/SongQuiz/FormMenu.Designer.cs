@@ -102,7 +102,7 @@ namespace SongQuiz
 			this.pnl_botones.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pnl_botones.Location = new System.Drawing.Point(0, 227);
 			this.pnl_botones.Name = "pnl_botones";
-			this.pnl_botones.Size = new System.Drawing.Size(1122, 730);
+			this.pnl_botones.Size = new System.Drawing.Size(1122, 757);
 			this.pnl_botones.TabIndex = 3;
 			// 
 			// button11
@@ -113,7 +113,7 @@ namespace SongQuiz
 			this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button11.ForeColor = System.Drawing.Color.YellowGreen;
 			this.button11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button11.Location = new System.Drawing.Point(463, 371);
+			this.button11.Location = new System.Drawing.Point(463, 334);
 			this.button11.Name = "button11";
 			this.button11.Size = new System.Drawing.Size(200, 42);
 			this.button11.TabIndex = 3;
@@ -129,7 +129,7 @@ namespace SongQuiz
 			this.button10.ForeColor = System.Drawing.Color.Gold;
 			this.button10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button10.Location = new System.Drawing.Point(594, 371);
+			this.button10.Location = new System.Drawing.Point(822, 724);
 			this.button10.Name = "button10";
 			this.button10.Size = new System.Drawing.Size(200, 42);
 			this.button10.TabIndex = 5;
@@ -144,7 +144,7 @@ namespace SongQuiz
 			this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button9.Location = new System.Drawing.Point(463, 700);
+			this.button9.Location = new System.Drawing.Point(127, 724);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(200, 42);
 			this.button9.TabIndex = 7;
@@ -158,7 +158,7 @@ namespace SongQuiz
 			this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button8.ForeColor = System.Drawing.Color.Chartreuse;
 			this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button8.Location = new System.Drawing.Point(338, 700);
+			this.button8.Location = new System.Drawing.Point(472, 724);
 			this.button8.Name = "button8";
 			this.button8.Size = new System.Drawing.Size(200, 42);
 			this.button8.TabIndex = 9;
@@ -173,7 +173,7 @@ namespace SongQuiz
 			this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button7.ForeColor = System.Drawing.Color.LightBlue;
 			this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button7.Location = new System.Drawing.Point(594, 700);
+			this.button7.Location = new System.Drawing.Point(822, 334);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(200, 42);
 			this.button7.TabIndex = 11;
@@ -189,7 +189,7 @@ namespace SongQuiz
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.ForeColor = System.Drawing.Color.Plum;
 			this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button1.Location = new System.Drawing.Point(338, 371);
+			this.button1.Location = new System.Drawing.Point(127, 334);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(200, 42);
 			this.button1.TabIndex = 1;
@@ -203,9 +203,9 @@ namespace SongQuiz
 			this.btn_mix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_mix.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_mix.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_mix.Location = new System.Drawing.Point(567, 443);
+			this.btn_mix.Location = new System.Drawing.Point(768, 418);
 			this.btn_mix.Name = "btn_mix";
-			this.btn_mix.Size = new System.Drawing.Size(250, 250);
+			this.btn_mix.Size = new System.Drawing.Size(300, 300);
 			this.btn_mix.TabIndex = 10;
 			this.btn_mix.Tag = "6";
 			this.btn_mix.UseVisualStyleBackColor = true;
@@ -220,9 +220,9 @@ namespace SongQuiz
 			this.btn_kpop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_kpop.ForeColor = System.Drawing.Color.Snow;
 			this.btn_kpop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_kpop.Location = new System.Drawing.Point(436, 443);
+			this.btn_kpop.Location = new System.Drawing.Point(413, 418);
 			this.btn_kpop.Name = "btn_kpop";
-			this.btn_kpop.Size = new System.Drawing.Size(250, 250);
+			this.btn_kpop.Size = new System.Drawing.Size(300, 300);
 			this.btn_kpop.TabIndex = 8;
 			this.btn_kpop.Tag = "5";
 			this.btn_kpop.UseVisualStyleBackColor = true;
@@ -237,9 +237,9 @@ namespace SongQuiz
 			this.btn_latino.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_latino.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_latino.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_latino.Location = new System.Drawing.Point(567, 114);
+			this.btn_latino.Location = new System.Drawing.Point(768, 28);
 			this.btn_latino.Name = "btn_latino";
-			this.btn_latino.Size = new System.Drawing.Size(250, 250);
+			this.btn_latino.Size = new System.Drawing.Size(300, 300);
 			this.btn_latino.TabIndex = 4;
 			this.btn_latino.Tag = "3";
 			this.btn_latino.UseVisualStyleBackColor = true;
@@ -252,9 +252,9 @@ namespace SongQuiz
 			this.btn_rock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_rock.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_rock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_rock.Location = new System.Drawing.Point(436, 114);
+			this.btn_rock.Location = new System.Drawing.Point(413, 28);
 			this.btn_rock.Name = "btn_rock";
-			this.btn_rock.Size = new System.Drawing.Size(250, 250);
+			this.btn_rock.Size = new System.Drawing.Size(300, 300);
 			this.btn_rock.TabIndex = 2;
 			this.btn_rock.Tag = "2";
 			this.btn_rock.UseVisualStyleBackColor = true;
@@ -266,9 +266,9 @@ namespace SongQuiz
 			this.btn_rap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_rap.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_rap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_rap.Location = new System.Drawing.Point(311, 443);
+			this.btn_rap.Location = new System.Drawing.Point(77, 418);
 			this.btn_rap.Name = "btn_rap";
-			this.btn_rap.Size = new System.Drawing.Size(250, 250);
+			this.btn_rap.Size = new System.Drawing.Size(300, 300);
 			this.btn_rap.TabIndex = 6;
 			this.btn_rap.Tag = "4";
 			this.btn_rap.UseVisualStyleBackColor = true;
@@ -282,9 +282,9 @@ namespace SongQuiz
 			this.btn_pop.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_pop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_pop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_pop.Location = new System.Drawing.Point(311, 114);
+			this.btn_pop.Location = new System.Drawing.Point(77, 28);
 			this.btn_pop.Name = "btn_pop";
-			this.btn_pop.Size = new System.Drawing.Size(250, 250);
+			this.btn_pop.Size = new System.Drawing.Size(300, 300);
 			this.btn_pop.TabIndex = 0;
 			this.btn_pop.Tag = "1";
 			this.btn_pop.UseVisualStyleBackColor = true;
@@ -294,9 +294,9 @@ namespace SongQuiz
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.RoyalBlue;
+			this.BackColor = System.Drawing.Color.MediumOrchid;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(1122, 957);
+			this.ClientSize = new System.Drawing.Size(1122, 984);
 			this.Controls.Add(this.pnl_botones);
 			this.Controls.Add(this.panel1);
 			this.Cursor = System.Windows.Forms.Cursors.Hand;
