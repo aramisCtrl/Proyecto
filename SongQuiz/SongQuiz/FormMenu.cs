@@ -99,6 +99,13 @@ namespace SongQuiz
 		
 		void FormMenuLoad(object sender, EventArgs e)
 		{
+			this.FormBorderStyle = FormBorderStyle.None;
+			this.WindowState = FormWindowState.Normal;
+
+			int taskBarHeight = Screen.PrimaryScreen.Bounds.Height - Screen.PrimaryScreen.WorkingArea.Height;
+			this.Bounds = new Rectangle(0, 0, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height - taskBarHeight);
+			this.WindowState = FormWindowState.Maximized;
+			
 			miconexion = new ClassConexionSQL();
 			miconexion.CrearConexion();
 		}

@@ -54,7 +54,8 @@ namespace SongQuiz
 			this.lbl_cancion = new System.Windows.Forms.Label();
 			this.pic_portada = new System.Windows.Forms.PictureBox();
 			this.tmr_partida = new System.Windows.Forms.Timer(this.components);
-			this.tmr_espera = new System.Windows.Forms.Timer(this.components);
+			this.tmr_espera2 = new System.Windows.Forms.Timer(this.components);
+			this.tmr_espera1 = new System.Windows.Forms.Timer(this.components);
 			this.panel2.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -112,7 +113,7 @@ namespace SongQuiz
 			this.lbl_timer.AutoEllipsis = true;
 			this.lbl_timer.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_timer.ForeColor = System.Drawing.Color.White;
-			this.lbl_timer.Location = new System.Drawing.Point(974, 9);
+			this.lbl_timer.Location = new System.Drawing.Point(1021, 9);
 			this.lbl_timer.Name = "lbl_timer";
 			this.lbl_timer.Size = new System.Drawing.Size(250, 93);
 			this.lbl_timer.TabIndex = 0;
@@ -125,7 +126,7 @@ namespace SongQuiz
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panel2.Location = new System.Drawing.Point(0, 813);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1236, 187);
+			this.panel2.Size = new System.Drawing.Size(1283, 187);
 			this.panel2.TabIndex = 2;
 			// 
 			// tableLayoutPanel1
@@ -143,51 +144,55 @@ namespace SongQuiz
 			this.tableLayoutPanel1.RowCount = 2;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(1236, 187);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1283, 187);
 			this.tableLayoutPanel1.TabIndex = 1;
 			// 
 			// btn_opcion1
 			// 
 			this.btn_opcion1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_opcion1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btn_opcion1.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_opcion1.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_opcion1.Location = new System.Drawing.Point(3, 3);
 			this.btn_opcion1.Name = "btn_opcion1";
-			this.btn_opcion1.Size = new System.Drawing.Size(612, 87);
+			this.btn_opcion1.Size = new System.Drawing.Size(635, 87);
 			this.btn_opcion1.TabIndex = 0;
+			this.btn_opcion1.UseMnemonic = false;
 			this.btn_opcion1.UseVisualStyleBackColor = true;
 			// 
 			// btn_opcion3
 			// 
 			this.btn_opcion3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_opcion3.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btn_opcion3.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_opcion3.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_opcion3.Location = new System.Drawing.Point(3, 96);
 			this.btn_opcion3.Name = "btn_opcion3";
-			this.btn_opcion3.Size = new System.Drawing.Size(612, 88);
+			this.btn_opcion3.Size = new System.Drawing.Size(635, 88);
 			this.btn_opcion3.TabIndex = 1;
+			this.btn_opcion3.UseMnemonic = false;
 			this.btn_opcion3.UseVisualStyleBackColor = true;
 			// 
 			// btn_opcion2
 			// 
 			this.btn_opcion2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_opcion2.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btn_opcion2.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_opcion2.Location = new System.Drawing.Point(621, 3);
+			this.btn_opcion2.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_opcion2.Location = new System.Drawing.Point(644, 3);
 			this.btn_opcion2.Name = "btn_opcion2";
-			this.btn_opcion2.Size = new System.Drawing.Size(612, 87);
+			this.btn_opcion2.Size = new System.Drawing.Size(636, 87);
 			this.btn_opcion2.TabIndex = 2;
+			this.btn_opcion2.UseMnemonic = false;
 			this.btn_opcion2.UseVisualStyleBackColor = true;
 			// 
 			// btn_opcion4
 			// 
 			this.btn_opcion4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_opcion4.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btn_opcion4.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_opcion4.Location = new System.Drawing.Point(621, 96);
+			this.btn_opcion4.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_opcion4.Location = new System.Drawing.Point(644, 96);
 			this.btn_opcion4.Name = "btn_opcion4";
-			this.btn_opcion4.Size = new System.Drawing.Size(612, 88);
+			this.btn_opcion4.Size = new System.Drawing.Size(636, 88);
 			this.btn_opcion4.TabIndex = 3;
+			this.btn_opcion4.UseMnemonic = false;
 			this.btn_opcion4.UseVisualStyleBackColor = true;
 			// 
 			// panel1
@@ -200,7 +205,7 @@ namespace SongQuiz
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1236, 813);
+			this.panel1.Size = new System.Drawing.Size(1283, 813);
 			this.panel1.TabIndex = 3;
 			this.panel1.TabStop = true;
 			// 
@@ -209,27 +214,29 @@ namespace SongQuiz
 			this.lbl_artista.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lbl_artista.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_artista.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.lbl_artista.Location = new System.Drawing.Point(3, 751);
+			this.lbl_artista.Location = new System.Drawing.Point(-23, 751);
 			this.lbl_artista.Name = "lbl_artista";
-			this.lbl_artista.Size = new System.Drawing.Size(1233, 59);
+			this.lbl_artista.Size = new System.Drawing.Size(1330, 59);
 			this.lbl_artista.TabIndex = 3;
 			this.lbl_artista.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_artista.UseMnemonic = false;
 			// 
 			// lbl_cancion
 			// 
 			this.lbl_cancion.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lbl_cancion.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_cancion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.lbl_cancion.Location = new System.Drawing.Point(3, 673);
+			this.lbl_cancion.Location = new System.Drawing.Point(-33, 673);
 			this.lbl_cancion.Name = "lbl_cancion";
-			this.lbl_cancion.Size = new System.Drawing.Size(1233, 66);
+			this.lbl_cancion.Size = new System.Drawing.Size(1340, 66);
 			this.lbl_cancion.TabIndex = 2;
 			this.lbl_cancion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.lbl_cancion.UseMnemonic = false;
 			// 
 			// pic_portada
 			// 
 			this.pic_portada.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pic_portada.Location = new System.Drawing.Point(299, 42);
+			this.pic_portada.Location = new System.Drawing.Point(316, 42);
 			this.pic_portada.Margin = new System.Windows.Forms.Padding(100);
 			this.pic_portada.Name = "pic_portada";
 			this.pic_portada.Size = new System.Drawing.Size(642, 623);
@@ -242,10 +249,15 @@ namespace SongQuiz
 			this.tmr_partida.Interval = 1000;
 			this.tmr_partida.Tick += new System.EventHandler(this.Tmr_partidaTick);
 			// 
-			// tmr_espera
+			// tmr_espera2
 			// 
-			this.tmr_espera.Interval = 4000;
-			this.tmr_espera.Tick += new System.EventHandler(this.Tmr_esperaTick);
+			this.tmr_espera2.Interval = 3500;
+			this.tmr_espera2.Tick += new System.EventHandler(this.Tmr_espera2Tick);
+			// 
+			// tmr_espera1
+			// 
+			this.tmr_espera1.Interval = 1500;
+			this.tmr_espera1.Tick += new System.EventHandler(this.Tmr_espera1Tick);
 			// 
 			// FormPartida
 			// 
@@ -253,7 +265,7 @@ namespace SongQuiz
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.RoyalBlue;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(1236, 1000);
+			this.ClientSize = new System.Drawing.Size(1283, 1000);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel2);
 			this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -270,9 +282,10 @@ namespace SongQuiz
 			((System.ComponentModel.ISupportInitialize)(this.pic_portada)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.Timer tmr_espera1;
 		private System.Windows.Forms.Label lbl_cancion;
 		private System.Windows.Forms.Label lbl_artista;
-		private System.Windows.Forms.Timer tmr_espera;
+		private System.Windows.Forms.Timer tmr_espera2;
 		private System.Windows.Forms.Timer tmr_partida;
 		private System.Windows.Forms.PictureBox pic_portada;
 		private System.Windows.Forms.Button btn_opcion4;

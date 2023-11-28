@@ -7,6 +7,7 @@ namespace SongQuiz
 {
 	public partial class FormPartida : Form
 	{
+		int opcionSeleccionada;
 		int opcionesCounter = 0;
 		int segundos = 0;
 		int segundos_countdown = 3;
@@ -168,11 +169,11 @@ namespace SongQuiz
 			btn_opcion[3].Enabled=false;
 			
 			Button btnClickeado = (Button)sender;
-			int opcionSeleccionada = int.Parse(btnClickeado.Tag.ToString());
+			opcionSeleccionada = int.Parse(btnClickeado.Tag.ToString());
 
 			tmr_partida.Stop();
-
-			VerificarRespuesta(opcionSeleccionada);
+			
+			tmr_espera1.Start();
 		}
 
 		
@@ -181,17 +182,21 @@ namespace SongQuiz
 			if (opcionSeleccionada == respuestaCorrecta)
 			{
 				btn_opcion[respuestaCorrecta].BackColor = Color.Green;
+				player.SoundLocation = (path + "\\Canciones\\Correcta.wav");
+    			player.Play();
 			}
 			else
 			{
 				btn_opcion[opcionSeleccionada].BackColor = Color.Red;
 				btn_opcion[respuestaCorrecta].BackColor = Color.Green;
+				player.SoundLocation = (path + "\\Canciones\\Incorrecta.wav");
+    			player.Play();
 			}
 			
 			lbl_cancion.Text = miPartida.cancion[ronda];
 			lbl_artista.Text = "de "+miPartida.artista[ronda];
 
-			tmr_espera.Start();
+			tmr_espera2.Start();
 		}
 		
 		
@@ -227,7 +232,7 @@ namespace SongQuiz
 	            lbl_cancion.Text = miPartida.cancion[ronda];
 				lbl_artista.Text = "de "+miPartida.artista[ronda];
 	
-	            tmr_espera.Start();
+	            tmr_espera2.Start();
 	        }
 	        
 	        else{
@@ -236,10 +241,10 @@ namespace SongQuiz
 		}
 		
 		
-		void Tmr_esperaTick(object sender, EventArgs e)
+		void Tmr_espera2Tick(object sender, EventArgs e)
 		{
-			tmr_espera.Stop();
-            tmr_espera.Dispose();
+			tmr_espera2.Stop();
+            tmr_espera2.Dispose();
 
             foreach (Button btn in btn_opcion)
             {
@@ -247,9 +252,17 @@ namespace SongQuiz
             }
             lbl_cancion.Text = "";
             lbl_artista.Text = "";
-            tiempo=0;
+            tiempo=1;
 
             SiguientePregunta();
+		}
+		
+		
+		void Tmr_espera1Tick(object sender, EventArgs e)
+		{
+			tmr_espera1.Stop();
+            tmr_espera1.Dispose();
+			VerificarRespuesta(opcionSeleccionada);	
 		}
 	}
 }

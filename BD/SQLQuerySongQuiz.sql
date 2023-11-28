@@ -328,6 +328,7 @@ ALTER TABLE canciones
 ADD canc_portada_blur_direccion VARCHAR(255)
 
 UPDATE canciones
-SET canc_portada_direccion = '\Imagenes\Portadas\Pop\Dark Horse (feat. Juicy J).jpg' 
-Where canc_id = 9
+SET canc_portada_blur_direccion = '\Imagenes\Portadas\Rock\Qué Ves_blur.jpg' 
+Where canc_id = 36
 
+select * from canciones
