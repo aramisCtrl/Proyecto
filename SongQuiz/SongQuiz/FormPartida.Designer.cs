@@ -37,7 +37,6 @@ namespace SongQuiz
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPartida));
 			this.tmr_countdown = new System.Windows.Forms.Timer(this.components);
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
@@ -51,14 +50,12 @@ namespace SongQuiz
 			this.btn_opcion2 = new System.Windows.Forms.Button();
 			this.btn_opcion4 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pic_portada = new System.Windows.Forms.PictureBox();
 			this.tmr_partida = new System.Windows.Forms.Timer(this.components);
 			this.panel2.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pic_portada)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tmr_countdown
@@ -184,8 +181,7 @@ namespace SongQuiz
 			// 
 			// panel1
 			// 
-			this.panel1.Controls.Add(this.pictureBox2);
-			this.panel1.Controls.Add(this.pictureBox1);
+			this.panel1.Controls.Add(this.pic_portada);
 			this.panel1.Controls.Add(this.lbl_timer);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -194,28 +190,20 @@ namespace SongQuiz
 			this.panel1.TabIndex = 3;
 			this.panel1.TabStop = true;
 			// 
-			// pictureBox2
+			// pic_portada
 			// 
-			this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(3, 531);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(216, 216);
-			this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox2.TabIndex = 2;
-			this.pictureBox2.TabStop = false;
+			this.pic_portada.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pic_portada.Location = new System.Drawing.Point(268, 21);
+			this.pic_portada.Margin = new System.Windows.Forms.Padding(100);
+			this.pic_portada.Name = "pic_portada";
+			this.pic_portada.Size = new System.Drawing.Size(705, 705);
+			this.pic_portada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pic_portada.TabIndex = 1;
+			this.pic_portada.TabStop = false;
 			// 
-			// pictureBox1
+			// tmr_partida
 			// 
-			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(268, 21);
-			this.pictureBox1.Margin = new System.Windows.Forms.Padding(100);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(705, 705);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 1;
-			this.pictureBox1.TabStop = false;
+			this.tmr_partida.Tick += new System.EventHandler(this.Tmr_partidaTick);
 			// 
 			// FormPartida
 			// 
@@ -236,13 +224,11 @@ namespace SongQuiz
 			this.panel2.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pic_portada)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.PictureBox pictureBox2;
 		private System.Windows.Forms.Timer tmr_partida;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox pic_portada;
 		private System.Windows.Forms.Button btn_opcion4;
 		private System.Windows.Forms.Button btn_opcion2;
 		private System.Windows.Forms.Button btn_opcion3;

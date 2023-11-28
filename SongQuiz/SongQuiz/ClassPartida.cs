@@ -10,6 +10,7 @@ namespace SongQuiz
 		public string[] artista;
 		public string[] direccion;
 		public string[] portada_direccion;
+		public string[] portada_blur_direccion;
 		public string[] opciones;
 		
 		public ClassPartida()

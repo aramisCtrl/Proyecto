@@ -38,6 +38,7 @@ namespace SongQuiz
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.button2 = new System.Windows.Forms.Button();
 			this.pic_logo = new System.Windows.Forms.PictureBox();
 			this.pnl_botones = new System.Windows.Forms.Panel();
 			this.button11 = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace SongQuiz
 			this.btn_rock = new System.Windows.Forms.Button();
 			this.btn_rap = new System.Windows.Forms.Button();
 			this.btn_pop = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
 			this.pnl_botones.SuspendLayout();
@@ -69,6 +69,15 @@ namespace SongQuiz
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(1122, 191);
 			this.panel1.TabIndex = 1;
+			// 
+			// button2
+			// 
+			this.button2.Location = new System.Drawing.Point(13, 23);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(75, 23);
+			this.button2.TabIndex = 1;
+			this.button2.Text = "button2";
+			this.button2.UseVisualStyleBackColor = true;
 			// 
 			// pic_logo
 			// 
@@ -296,16 +305,6 @@ namespace SongQuiz
 			this.btn_pop.UseVisualStyleBackColor = true;
 			this.btn_pop.Click += new System.EventHandler(this.Btn_partidaClick);
 			// 
-			// button2
-			// 
-			this.button2.Location = new System.Drawing.Point(13, 23);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(75, 23);
-			this.button2.TabIndex = 1;
-			this.button2.Text = "button2";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.Button2Click);
-			// 
 			// FormMenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -322,6 +321,7 @@ namespace SongQuiz
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SongQuiz";
 			this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+			this.Load += new System.EventHandler(this.FormMenuLoad);
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
 			this.pnl_botones.ResumeLayout(false);

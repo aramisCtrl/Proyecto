@@ -24,7 +24,7 @@ namespace SongQuiz
 			ClassConexionSQL conexionSQL = new ClassConexionSQL();
 //			if (conexionSQL.CrearConexion() && conexionSQL.ValidarUsuario(nombreUsuario, contraseña))
 //			{
-				FormMenu form = new FormMenu(conexionSQL);
+				FormMenu form = new FormMenu();
 				form.Show();
 				this.Hide();
 //			}

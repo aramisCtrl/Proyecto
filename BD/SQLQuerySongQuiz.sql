@@ -54,7 +54,7 @@ create table opciones(
 insert into categorias(cate_descripcion) values ('Pop'),('Rock'),('Latino'),('Rap'),('Kpop')
 insert into categorias(cate_descripcion) values ('Mix')
 
-select * from categorias
+select * from canciones
 
 insert into canciones(canc_nombre, canc_artista, canc_direccion, canc_cate_id, canc_portada_direccion) values
 ('7 rings', 'Ariana Grande', '\Canciones\Pop\7 rings.wav',1,'\Imagenes\Portadas\Pop\7 rings.jpg'),
@@ -65,7 +65,7 @@ insert into canciones(canc_nombre, canc_artista, canc_direccion, canc_cate_id, c
 ('Believer', 'Imagine Dragons', '\Canciones\Pop\Believer.wav',1,'\Imagenes\Portadas\Pop\Believer.jpg'),
 ('Blinding Lights', 'The Weeknd', '\Canciones\Pop\Blinding Lights.wav',1,'\Imagenes\Portadas\Pop\Blinding Lights.jpg'),
 ('Crazy In Love (feat. Jay-Z)', 'Beyoncé, JAY-Z', '\Canciones\Pop\Crazy In Love (feat. Jay-Z).wav',1,'\Imagenes\Portadas\Pop\Crazy In Love (feat. Jay-Z).jpg'),
-('Dark Horse', 'Katy Perry, Juicy J', '\Canciones\Pop\Dark Horse.wav',1,'\Imagenes\Portadas\Pop\Dark Horse.jpg'),
+('Dark Horse ', 'Katy Perry, Juicy J', '\Canciones\Pop\Dark Horse.wav',1,'\Imagenes\Portadas\Pop\Dark Horse.jpg'),
 ('Don''t Start Now', 'Dua Lipa', '\Canciones\Pop\Don''t Start Now.wav',1,'\Imagenes\Portadas\Pop\Don''t Start Now.jpg'),
 ('good 4 you', 'Olivia Rodrigo', '\Canciones\Pop\good 4 you.wav',1,'\Imagenes\Portadas\Pop\good 4 you.jpg'),
 ('Poker Face', 'Lady Gaga', '\Canciones\Pop\Poker Face.wav',1,'\Imagenes\Portadas\Pop\Poker Face.jpg'),
@@ -297,7 +297,7 @@ create procedure sp_ObtenerCanciones(
 )
 as
 begin
-    select top 5 canc_id, canc_nombre, canc_artista, canc_direccion, canc_portada_direccion 
+    select top 5 canc_id, canc_nombre, canc_artista, canc_direccion, canc_portada_direccion, canc_portada_blur_direccion
     from canciones
     where canc_cate_id = @categoria
     order by NEWID();
@@ -306,7 +306,7 @@ end
 create procedure sp_ObtenerCancionesMix
 as
 begin
-    select top 5 canc_id, canc_nombre, canc_artista, canc_direccion, canc_portada_direccion 
+    select top 5 canc_id, canc_nombre, canc_artista, canc_direccion, canc_portada_direccion, canc_portada_blur_direccion
     from canciones
     order by NEWID();
 end
@@ -322,4 +322,12 @@ left join canciones on canc_id = caop_canc_id
 where caop_canc_id = @id
 end
 
-exec sp_ObtenerOpciones 1
+exec sp_ObtenerOpciones 7
+
+ALTER TABLE canciones
+ADD canc_portada_blur_direccion VARCHAR(255)
+
+UPDATE canciones
+SET canc_portada_direccion = '\Imagenes\Portadas\Pop\Dark Horse (feat. Juicy J).jpg' 
+Where canc_id = 9
+
