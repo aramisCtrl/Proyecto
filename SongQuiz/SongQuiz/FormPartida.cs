@@ -9,24 +9,58 @@ namespace SongQuiz
 	{
 		int opcionesCounter = 0;
 		int segundos = 0;
-		int segundos_countdown = 5;
+		int segundos_countdown = 3;
 		int ronda = 0;
 		ClassPartida miPartida;
 		Button[] btn_opcion;
 		string path;
-		int tiempo = 0;
+		int tiempo = 1;
 		int respuestaCorrecta;
 		System.Media.SoundPlayer player;
+		
 
 		public FormPartida(ClassPartida mipartida)
 		{
-			path = AppDomain.CurrentDomain.BaseDirectory.ToString();
 			miPartida = mipartida;
 			player = new System.Media.SoundPlayer();
 			InitializeComponent();
 			this.Load += new EventHandler(FormPartidaLoad);
+			
+			path = AppDomain.CurrentDomain.BaseDirectory.ToString();
+			char caracterAEliminar = '\\';
+
+			if (path.EndsWith(caracterAEliminar.ToString()))
+			{
+				path = path.Substring(0, path.Length - 1);
+			}
+			
 			IniciarCuentaRegresiva();
 		}
+		
+		
+		void FormPartidaLoad(object sender, EventArgs e)
+		{
+			this.FormBorderStyle = FormBorderStyle.None;
+			this.WindowState = FormWindowState.Normal;
+
+			int taskBarHeight = Screen.PrimaryScreen.Bounds.Height - Screen.PrimaryScreen.WorkingArea.Height;
+			this.Bounds = new Rectangle(0, 0, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height - taskBarHeight);
+			this.WindowState = FormWindowState.Maximized;
+
+			btn_opcion = new Button[] { btn_opcion1, btn_opcion2, btn_opcion3, btn_opcion4 };
+			btn_opcion[0].Click += BtnOpcionClick;
+			btn_opcion[1].Click += BtnOpcionClick;
+			btn_opcion[2].Click += BtnOpcionClick;
+			btn_opcion[3].Click += BtnOpcionClick;
+			
+			btn_opcion[0].Enabled=false;
+			btn_opcion[1].Enabled=false;
+			btn_opcion[2].Enabled=false;
+			btn_opcion[3].Enabled=false;
+			
+			pic_portada.Image = Image.FromFile(@""+path+"\\Imagenes\\Logos\\Logo Transparente.png");
+		}
+		
 
 		void IniciarCuentaRegresiva()
 		{
@@ -35,6 +69,7 @@ namespace SongQuiz
 			lbl_timer.Text = segundos_countdown.ToString();
 			tmr_countdown.Start();
 		}
+		
 
 		void Tmr_countdownTick(object sender, EventArgs e)
 		{
@@ -51,69 +86,44 @@ namespace SongQuiz
 
 			if (segundos_countdown == -2)
 			{
-				tmr_countdown.Stop();
 				partida();
+				tmr_countdown.Stop();
 			}
 		}
 
-		void FormPartidaLoad(object sender, EventArgs e)
-		{
-			this.FormBorderStyle = FormBorderStyle.None;
-			this.WindowState = FormWindowState.Normal;
-
-			int taskBarHeight = Screen.PrimaryScreen.Bounds.Height - Screen.PrimaryScreen.WorkingArea.Height;
-			this.Bounds = new Rectangle(0, 0, Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height - taskBarHeight);
-			this.WindowState = FormWindowState.Maximized;
-
-			btn_opcion = new Button[] { btn_opcion1, btn_opcion2, btn_opcion3, btn_opcion4 };
-			btn_opcion[0].Click += BtnOpcionClick;
-			btn_opcion[1].Click += BtnOpcionClick;
-			btn_opcion[2].Click += BtnOpcionClick;
-			btn_opcion[3].Click += BtnOpcionClick;
-		}
-
+		
 		void partida()
 		{
+			btn_opcion[0].Enabled=true;
+			btn_opcion[1].Enabled=true;
+			btn_opcion[2].Enabled=true;
+			btn_opcion[3].Enabled=true;
+			lbl_timer.Text = tiempo.ToString();
 			if (ronda < 5)
 			{
 				tmr_partida.Start();
-				tiempo = 0;
 				ReproducirCancion(miPartida.direccion[ronda]);
 				MostrarPortadaYOpciones();
-				tmr_partida.Start();
 			}
 			else
 			{
 				MessageBox.Show("Juego completado");
 			}
 		}
+		
 
 		void ReproducirCancion(string ruta)
 		{
-			char caracterAEliminar = '\\';
-
-			if (path.EndsWith(caracterAEliminar.ToString()))
-			{
-				path = path.Substring(0, path.Length - 1);
-			}
-
 			string cancion = path + ruta;
 			player.SoundLocation = @"" + (cancion);
 			player.Play();
 		}
 
+		
 		void MostrarPortadaYOpciones()
 		{
-			int[] tags = new int[4];
 			int[] rnd = new int[4];
 			Random random = new Random();
-
-			char caracterAEliminar = '\\';
-
-			if (path.EndsWith(caracterAEliminar.ToString()))
-			{
-				path = path.Substring(0, path.Length - 1);
-			}
 
 			pic_portada.Image = Image.FromFile(@"" + path + miPartida.portada_direccion[ronda]);
 
@@ -149,16 +159,23 @@ namespace SongQuiz
 			opcionesCounter += 3;
 		}
 
+		
 		void BtnOpcionClick(object sender, EventArgs e)
 		{
+			btn_opcion[0].Enabled=false;
+			btn_opcion[1].Enabled=false;
+			btn_opcion[2].Enabled=false;
+			btn_opcion[3].Enabled=false;
+			
 			Button btnClickeado = (Button)sender;
-			int opcionSeleccionada = Array.IndexOf(btn_opcion, btnClickeado);
+			int opcionSeleccionada = int.Parse(btnClickeado.Tag.ToString());
 
 			tmr_partida.Stop();
 
 			VerificarRespuesta(opcionSeleccionada);
 		}
 
+		
 		void VerificarRespuesta(int opcionSeleccionada)
 		{
 			if (opcionSeleccionada == respuestaCorrecta)
@@ -170,29 +187,14 @@ namespace SongQuiz
 				btn_opcion[opcionSeleccionada].BackColor = Color.Red;
 				btn_opcion[respuestaCorrecta].BackColor = Color.Green;
 			}
-			Thread.Sleep(3000);
-			foreach (Button btn in btn_opcion)
-			{
-				btn.BackColor = SystemColors.Control;
-			}
-			SiguientePregunta();
-			/*
-            Timer esperaTimer = new Timer();
-            esperaTimer.Interval = 3000;
-            esperaTimer.Tick += (sender, e) =>
-            {
-                esperaTimer.Stop();
-                esperaTimer.Dispose();
+			
+			lbl_cancion.Text = miPartida.cancion[ronda];
+			lbl_artista.Text = "de "+miPartida.artista[ronda];
 
-                foreach (Button btn in btn_opcion)
-                {
-                    btn.BackColor = SystemColors.Control;
-                }
-
-                SiguientePregunta();
-            };
-            esperaTimer.Start();*/
+			tmr_espera.Start();
 		}
+		
+		
 		void SiguientePregunta()
 		{
 			ronda++;
@@ -203,37 +205,51 @@ namespace SongQuiz
 			}
 			else
 			{
+				player.Stop();
 				MessageBox.Show("Juego completado");
+				this.Close();
 			}
-			
-			segundos=0;
-		}
-
-		void Timer_partidaTick(object sender, EventArgs e)
-		{
-			            tiempo++;
-
-			            if (tiempo >= 25)
-			            {
-			                btn_opcion[respuestaCorrecta].BackColor = Color.Green;
-
-			                System.Threading.Thread.Sleep(3000);
-
-			                foreach (Button btn in btn_opcion)
-			                {
-			                    btn.BackColor = SystemColors.Control;
-			                }
-
-			                SiguientePregunta();
-			                segundos=0;
-			            }
 		}
 		
-
 		
 		void Tmr_partidaTick(object sender, EventArgs e)
 		{
-			
+			tiempo++;
+	
+	        if (tiempo == 26)
+	        {
+				btn_opcion[0].Enabled=false;
+				btn_opcion[1].Enabled=false;
+				btn_opcion[2].Enabled=false;
+				btn_opcion[3].Enabled=false;
+	            btn_opcion[respuestaCorrecta].BackColor = Color.Green;
+	            
+	            lbl_cancion.Text = miPartida.cancion[ronda];
+				lbl_artista.Text = "de "+miPartida.artista[ronda];
+	
+	            tmr_espera.Start();
+	        }
+	        
+	        else{
+	        	lbl_timer.Text = tiempo.ToString();
+	        }
+		}
+		
+		
+		void Tmr_esperaTick(object sender, EventArgs e)
+		{
+			tmr_espera.Stop();
+            tmr_espera.Dispose();
+
+            foreach (Button btn in btn_opcion)
+            {
+                btn.BackColor = SystemColors.Control;
+            }
+            lbl_cancion.Text = "";
+            lbl_artista.Text = "";
+            tiempo=0;
+
+            SiguientePregunta();
 		}
 	}
 }
