@@ -24,18 +24,12 @@ create table usuarios(
 	usua_id int identity(1,1) primary key not null,
 	usua_nombre varchar(255) not null,
 	usua_contraseña varchar(255) not null,
-	usua_avat_id int not null,
-	usua_alia_id int not null
+	usua_avat_id int not null
 )
 
 create table avatares(
 	avat_id int identity(1,1) primary key not null,
-	avar_descripcion varchar(255) not null
-)
-
-create table alias(
-	alia_id int identity(1,1) primary key not null,
-	alia_descripcion varchar(255) not null
+	avat_direccion varchar(255) not null
 )
 
 create table canciones_opciones(
@@ -362,3 +356,54 @@ BEGIN
 END;
 
 insert into usuarios(usua_nombre, usua_contraseña, usua_avat_id) values ('cachiflop', 'AramisYCiro123_', 10)
+
+create procedure sp_ObtenerAvatares
+as
+begin
+select avat_direccion from avatares
+end
+
+exec sp_ObtenerAvatares
+
+INSERT INTO avatares (avat_direccion) VALUES 
+('\Imagenes\Avatares\avatar1.jpg'),
+('\Imagenes\Avatares\avatar2.jpg'),
+('\Imagenes\Avatares\avatar3.jpg'),
+('\Imagenes\Avatares\avatar4.jpg'),
+('\Imagenes\Avatares\avatar5.jpg'),
+('\Imagenes\Avatares\avatar6.jpg'),
+('\Imagenes\Avatares\avatar7.jpg'),
+('\Imagenes\Avatares\avatar8.jpg'),
+('\Imagenes\Avatares\avatar9.jpg'),
+('\Imagenes\Avatares\avatar10.jpg'),
+('\Imagenes\Avatares\avatar11.jpg'),
+('\Imagenes\Avatares\avatar12.jpg');
+
+CREATE PROCEDURE sp_CheckUsuarios
+    @nombre NVARCHAR(255)
+AS
+BEGIN
+    -- Variable para almacenar el resultado (true o false)
+    DECLARE @usuarioExistente BIT;
+
+    -- Verificar si existe un usuario con el nombre proporcionado
+    IF EXISTS (SELECT 1 FROM usuarios WHERE usua_nombre = @nombre)
+        SET @usuarioExistente = 1; -- Usuario encontrado
+    ELSE
+        SET @usuarioExistente = 0; -- Usuario no encontrado
+
+    -- Devolver el resultado
+    SELECT @usuarioExistente AS 'UsuarioExistente';
+END;
+
+select * from usuarios
+
+create procedure sp_ObtenerUsuario(
+	@nombre NVARCHAR(255)
+)
+as
+begin
+select usua_id, usua_nombre, avat_direccion from usuarios
+left join avatares on avat_id = usua_avat_id
+where usua_nombre = @nombre
+end

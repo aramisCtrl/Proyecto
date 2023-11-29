@@ -179,5 +179,28 @@ public class ClassConexionSQL
 			return null;
 		}
 	}
-
+	
+	
+	public bool CheckearUsuario(string nombreUsuario)
+	{
+	    try
+	    {
+	        string query = "EXEC sp_CheckUsuarios @nombre";
+	        using (SqlCommand cmd = new SqlCommand(query, conexion))
+	        {
+	            cmd.Parameters.AddWithValue("@nombre", nombreUsuario);
+	
+	            conexion.Open();
+	            bool resultado = (bool)cmd.ExecuteScalar();
+	            conexion.Close();
+	
+	            return resultado;
+	        }
+	    }
+	    catch (Exception ex)
+	    {
+	        MessageBox.Show("Error al checkear usuario: " + ex.Message);
+	        return false;
+	    }
+	}
 }

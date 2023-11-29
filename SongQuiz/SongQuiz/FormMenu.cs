@@ -11,17 +11,26 @@ namespace SongQuiz
 {
     public partial class FormMenu : Form
     {
+    	public ClassUsuario miusuario;
         public ClassConexionSQL miconexion;
         public ClassPartida mipartida;
+        string path;
         int aux = 0;
 
-        public FormMenu()
+        public FormMenu(ClassUsuario miUsuario)
         {
+        	path = AppDomain.CurrentDomain.BaseDirectory.ToString();
+			char caracterAEliminar = '\\';
+
+			if (path.EndsWith(caracterAEliminar.ToString()))
+			{
+				path = path.Substring(0, path.Length - 1);
+			}
+        	miusuario = miUsuario;
             InitializeComponent();
         }
 
-       
-
+    
         void Btn_partidaClick(object sender, EventArgs e)
         {
             mipartida = new ClassPartida();
@@ -97,6 +106,9 @@ namespace SongQuiz
 
         void FormMenuLoad(object sender, EventArgs e)
         {
+        	pic_avatar.Image = Image.FromFile(@""+path+miusuario.avatar);
+        	lbl_nombre.Text = miusuario.nombre;
+        	
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Normal;
 

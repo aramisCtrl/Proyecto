@@ -38,6 +38,8 @@ namespace SongQuiz
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.lbl_nombre = new System.Windows.Forms.Label();
+			this.pic_avatar = new System.Windows.Forms.PictureBox();
 			this.pic_logo = new System.Windows.Forms.PictureBox();
 			this.pnl_botones = new System.Windows.Forms.Panel();
 			this.button11 = new System.Windows.Forms.Button();
@@ -53,6 +55,7 @@ namespace SongQuiz
 			this.btn_rap = new System.Windows.Forms.Button();
 			this.btn_pop = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
 			this.pnl_botones.SuspendLayout();
 			this.SuspendLayout();
@@ -60,6 +63,8 @@ namespace SongQuiz
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.Transparent;
+			this.panel1.Controls.Add(this.lbl_nombre);
+			this.panel1.Controls.Add(this.pic_avatar);
 			this.panel1.Controls.Add(this.pic_logo);
 			this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -68,6 +73,25 @@ namespace SongQuiz
 			this.panel1.Size = new System.Drawing.Size(1122, 227);
 			this.panel1.TabIndex = 1;
 			// 
+			// lbl_nombre
+			// 
+			this.lbl_nombre.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_nombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.lbl_nombre.Location = new System.Drawing.Point(3, 173);
+			this.lbl_nombre.Name = "lbl_nombre";
+			this.lbl_nombre.Size = new System.Drawing.Size(251, 51);
+			this.lbl_nombre.TabIndex = 2;
+			this.lbl_nombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pic_avatar
+			// 
+			this.pic_avatar.Location = new System.Drawing.Point(45, 0);
+			this.pic_avatar.Name = "pic_avatar";
+			this.pic_avatar.Size = new System.Drawing.Size(170, 170);
+			this.pic_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pic_avatar.TabIndex = 1;
+			this.pic_avatar.TabStop = false;
+			// 
 			// pic_logo
 			// 
 			this.pic_logo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -75,7 +99,7 @@ namespace SongQuiz
 			this.pic_logo.Cursor = System.Windows.Forms.Cursors.Default;
 			this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
 			this.pic_logo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.pic_logo.Location = new System.Drawing.Point(-1, 39);
+			this.pic_logo.Location = new System.Drawing.Point(0, 0);
 			this.pic_logo.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
 			this.pic_logo.Name = "pic_logo";
 			this.pic_logo.Size = new System.Drawing.Size(1120, 188);
@@ -138,7 +162,6 @@ namespace SongQuiz
 			// 
 			// button9
 			// 
-			this.button9.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.button9.AutoSize = true;
 			this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,6 +176,7 @@ namespace SongQuiz
 			// 
 			// button8
 			// 
+			this.button8.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.button8.AutoSize = true;
 			this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -308,11 +332,14 @@ namespace SongQuiz
 			this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.Load += new System.EventHandler(this.FormMenuLoad);
 			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
 			this.pnl_botones.ResumeLayout(false);
 			this.pnl_botones.PerformLayout();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox pic_avatar;
+		private System.Windows.Forms.Label lbl_nombre;
 		private System.Windows.Forms.Button btn_pop;
 		private System.Windows.Forms.Button btn_rap;
 		private System.Windows.Forms.Button btn_rock;

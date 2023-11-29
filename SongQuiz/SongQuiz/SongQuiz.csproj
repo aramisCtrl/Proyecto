@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="ClassConexion.cs" />
     <Compile Include="ClassPartida.cs" />
+    <Compile Include="ClassUsuario.cs" />
     <Compile Include="FormMenu.cs" />
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>

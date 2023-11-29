@@ -56,7 +56,7 @@ namespace SongQuiz
 			this.btn_ingresar.Name = "btn_ingresar";
 			this.btn_ingresar.Size = new System.Drawing.Size(158, 47);
 			this.btn_ingresar.TabIndex = 2;
-			this.btn_ingresar.Text = "Iniciar";
+			this.btn_ingresar.Text = "Ingresar";
 			this.btn_ingresar.UseVisualStyleBackColor = true;
 			this.btn_ingresar.Click += new System.EventHandler(this.Btn_ingresarClick);
 			// 
@@ -81,11 +81,12 @@ namespace SongQuiz
 			this.btn_nuevo.TabIndex = 3;
 			this.btn_nuevo.Text = "Registrarse";
 			this.btn_nuevo.UseVisualStyleBackColor = true;
+			this.btn_nuevo.Click += new System.EventHandler(this.Btn_nuevoClick);
 			// 
 			// lbl_usuario
 			// 
 			this.lbl_usuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_usuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.lbl_usuario.Location = new System.Drawing.Point(132, 329);
 			this.lbl_usuario.Name = "lbl_usuario";
@@ -97,7 +98,7 @@ namespace SongQuiz
 			// lbl_contraseña
 			// 
 			this.lbl_contraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.lbl_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_contraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.lbl_contraseña.Location = new System.Drawing.Point(132, 394);
 			this.lbl_contraseña.Name = "lbl_contraseña";
