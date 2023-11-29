@@ -51,6 +51,7 @@ namespace SongQuiz
 			// btn_ingresar
 			// 
 			this.btn_ingresar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btn_ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_ingresar.Location = new System.Drawing.Point(255, 472);
 			this.btn_ingresar.Name = "btn_ingresar";
@@ -74,6 +75,7 @@ namespace SongQuiz
 			// btn_nuevo
 			// 
 			this.btn_nuevo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_nuevo.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_nuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_nuevo.Location = new System.Drawing.Point(512, 595);
 			this.btn_nuevo.Name = "btn_nuevo";
@@ -168,5 +170,10 @@ namespace SongQuiz
 		private System.Windows.Forms.Button btn_nuevo;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button btn_ingresar;
+		
+		void Btn_mostrar(object sender, System.Windows.Forms.MouseEventArgs e)
+		{
+			
+		}
 	}
 }

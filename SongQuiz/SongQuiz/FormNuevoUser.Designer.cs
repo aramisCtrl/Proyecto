@@ -56,6 +56,7 @@ namespace SongQuiz
 			this.lbl_usuario = new System.Windows.Forms.Label();
 			this.btn_confirmar = new System.Windows.Forms.Button();
 			this.btn_cancelar = new System.Windows.Forms.Button();
+			this.lbl_avatar = new System.Windows.Forms.Label();
 			this.lay_avatares.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pic12)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic11)).BeginInit();
@@ -104,6 +105,7 @@ namespace SongQuiz
 			// 
 			// pic12
 			// 
+			this.pic12.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic12.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic12.Location = new System.Drawing.Point(136, 650);
 			this.pic12.Name = "pic12";
@@ -115,6 +117,7 @@ namespace SongQuiz
 			// 
 			// pic11
 			// 
+			this.pic11.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic11.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic11.Location = new System.Drawing.Point(3, 650);
 			this.pic11.Name = "pic11";
@@ -126,6 +129,7 @@ namespace SongQuiz
 			// 
 			// pic8
 			// 
+			this.pic8.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic8.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic8.Location = new System.Drawing.Point(136, 391);
 			this.pic8.Name = "pic8";
@@ -137,6 +141,7 @@ namespace SongQuiz
 			// 
 			// pic10
 			// 
+			this.pic10.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic10.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic10.Location = new System.Drawing.Point(136, 519);
 			this.pic10.Name = "pic10";
@@ -148,6 +153,7 @@ namespace SongQuiz
 			// 
 			// pic9
 			// 
+			this.pic9.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic9.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic9.Location = new System.Drawing.Point(3, 519);
 			this.pic9.Name = "pic9";
@@ -159,6 +165,7 @@ namespace SongQuiz
 			// 
 			// pic7
 			// 
+			this.pic7.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic7.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic7.Location = new System.Drawing.Point(3, 391);
 			this.pic7.Name = "pic7";
@@ -170,6 +177,7 @@ namespace SongQuiz
 			// 
 			// pic6
 			// 
+			this.pic6.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic6.Location = new System.Drawing.Point(136, 260);
 			this.pic6.Name = "pic6";
@@ -181,6 +189,7 @@ namespace SongQuiz
 			// 
 			// pic5
 			// 
+			this.pic5.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic5.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic5.Location = new System.Drawing.Point(3, 260);
 			this.pic5.Name = "pic5";
@@ -192,6 +201,7 @@ namespace SongQuiz
 			// 
 			// pic4
 			// 
+			this.pic4.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic4.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic4.Location = new System.Drawing.Point(136, 131);
 			this.pic4.Name = "pic4";
@@ -203,6 +213,7 @@ namespace SongQuiz
 			// 
 			// pic2
 			// 
+			this.pic2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic2.Location = new System.Drawing.Point(136, 3);
 			this.pic2.Name = "pic2";
@@ -214,6 +225,7 @@ namespace SongQuiz
 			// 
 			// pic3
 			// 
+			this.pic3.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic3.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic3.Location = new System.Drawing.Point(3, 131);
 			this.pic3.Name = "pic3";
@@ -225,6 +237,7 @@ namespace SongQuiz
 			// 
 			// pic1
 			// 
+			this.pic1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pic1.Location = new System.Drawing.Point(3, 3);
 			this.pic1.Name = "pic1";
@@ -236,7 +249,7 @@ namespace SongQuiz
 			// 
 			// pic_central
 			// 
-			this.pic_central.Location = new System.Drawing.Point(28, 29);
+			this.pic_central.Location = new System.Drawing.Point(23, 65);
 			this.pic_central.Name = "pic_central";
 			this.pic_central.Size = new System.Drawing.Size(448, 448);
 			this.pic_central.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,6 +300,7 @@ namespace SongQuiz
 			// 
 			// btn_confirmar
 			// 
+			this.btn_confirmar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_confirmar.Location = new System.Drawing.Point(277, 691);
 			this.btn_confirmar.Name = "btn_confirmar";
@@ -298,6 +312,7 @@ namespace SongQuiz
 			// 
 			// btn_cancelar
 			// 
+			this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btn_cancelar.Location = new System.Drawing.Point(49, 691);
 			this.btn_cancelar.Name = "btn_cancelar";
@@ -307,12 +322,25 @@ namespace SongQuiz
 			this.btn_cancelar.UseVisualStyleBackColor = true;
 			this.btn_cancelar.Click += new System.EventHandler(this.Btn_cancelarClick);
 			// 
+			// lbl_avatar
+			// 
+			this.lbl_avatar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lbl_avatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_avatar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.lbl_avatar.Location = new System.Drawing.Point(23, 23);
+			this.lbl_avatar.Name = "lbl_avatar";
+			this.lbl_avatar.Size = new System.Drawing.Size(194, 48);
+			this.lbl_avatar.TabIndex = 9;
+			this.lbl_avatar.Text = "Avatar:";
+			this.lbl_avatar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// FormNuevoUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MediumOrchid;
 			this.ClientSize = new System.Drawing.Size(767, 775);
+			this.Controls.Add(this.lbl_avatar);
 			this.Controls.Add(this.btn_cancelar);
 			this.Controls.Add(this.btn_confirmar);
 			this.Controls.Add(this.txt_contraseña);
@@ -343,6 +371,7 @@ namespace SongQuiz
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label lbl_avatar;
 		private System.Windows.Forms.Button btn_cancelar;
 		private System.Windows.Forms.Button btn_confirmar;
 		private System.Windows.Forms.Label lbl_usuario;

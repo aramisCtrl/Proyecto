@@ -322,8 +322,8 @@ ALTER TABLE canciones
 ADD canc_portada_blur_direccion VARCHAR(255)
 
 UPDATE canciones
-SET canc_portada_blur_direccion = '\Imagenes\Portadas\Rock\Qué Ves_blur.jpg' 
-Where canc_id = 36
+SET canc_portada_blur_direccion = '\Imagenes\Portadas\Rap\California Love_blur.jpg' 
+Where canc_id = 67
 
 select * from canciones
 

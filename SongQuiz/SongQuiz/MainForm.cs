@@ -13,7 +13,6 @@ namespace SongQuiz
 	{
 		public ClassConexionSQL miconexion;
 		public ClassUsuario miusuario;
-		string path;
 		
 		public MainForm()
 		{
@@ -46,19 +45,17 @@ namespace SongQuiz
 		        }
 		
 		        FormMenu form = new FormMenu(miusuario);
-		        form.Show();
 		        this.Hide();
+		        form.ShowDialog();
+		        this.Show();
 		    }
 		    else
 		    {
-		        MessageBox.Show("Nombre de usuario o contraseña incorrectos.");
+		        MessageBox.Show("Nombre de usuario o contraseña incorrectos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 		    }
-		}
-
-		
-		void txt_contraseñaClick(object sender, EventArgs e)
-		{
-		
+		    
+		    txt_usuario.Text="";
+		    txt_contraseña.Text="";
 		}
 		
 		
@@ -79,6 +76,7 @@ namespace SongQuiz
 				this.Show();
 			}		
 		}
+		
 	}
 }
 

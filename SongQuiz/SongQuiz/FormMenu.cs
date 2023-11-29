@@ -119,6 +119,11 @@ namespace SongQuiz
             miconexion = new ClassConexionSQL();
             miconexion.CrearConexion();
         }
+		
+		void Btn_cerrarClick(object sender, EventArgs e)
+		{
+			this.Close();
+		}
     }
 }
 
