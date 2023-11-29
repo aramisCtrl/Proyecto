@@ -38,10 +38,12 @@ namespace SongQuiz
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btn_cerrar = new System.Windows.Forms.Button();
 			this.lbl_nombre = new System.Windows.Forms.Label();
 			this.pic_avatar = new System.Windows.Forms.PictureBox();
 			this.pic_logo = new System.Windows.Forms.PictureBox();
 			this.pnl_botones = new System.Windows.Forms.Panel();
+			this.lbl_copyright = new System.Windows.Forms.Label();
 			this.button11 = new System.Windows.Forms.Button();
 			this.button10 = new System.Windows.Forms.Button();
 			this.button9 = new System.Windows.Forms.Button();
@@ -54,9 +56,6 @@ namespace SongQuiz
 			this.btn_rock = new System.Windows.Forms.Button();
 			this.btn_rap = new System.Windows.Forms.Button();
 			this.btn_pop = new System.Windows.Forms.Button();
-			this.btn_avatar = new System.Windows.Forms.Button();
-			this.btn_cerrar = new System.Windows.Forms.Button();
-			this.lbl_copyright = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
@@ -67,7 +66,6 @@ namespace SongQuiz
 			// 
 			this.panel1.BackColor = System.Drawing.Color.Transparent;
 			this.panel1.Controls.Add(this.btn_cerrar);
-			this.panel1.Controls.Add(this.btn_avatar);
 			this.panel1.Controls.Add(this.lbl_nombre);
 			this.panel1.Controls.Add(this.pic_avatar);
 			this.panel1.Controls.Add(this.pic_logo);
@@ -78,9 +76,22 @@ namespace SongQuiz
 			this.panel1.Size = new System.Drawing.Size(1122, 227);
 			this.panel1.TabIndex = 1;
 			// 
+			// btn_cerrar
+			// 
+			this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_cerrar.Location = new System.Drawing.Point(917, 12);
+			this.btn_cerrar.Name = "btn_cerrar";
+			this.btn_cerrar.Size = new System.Drawing.Size(193, 38);
+			this.btn_cerrar.TabIndex = 4;
+			this.btn_cerrar.Text = "Cerrar Sesión";
+			this.btn_cerrar.UseVisualStyleBackColor = true;
+			this.btn_cerrar.Click += new System.EventHandler(this.Btn_cerrarClick);
+			// 
 			// lbl_nombre
 			// 
-			this.lbl_nombre.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_nombre.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_nombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.lbl_nombre.Location = new System.Drawing.Point(3, 173);
 			this.lbl_nombre.Name = "lbl_nombre";
@@ -90,12 +101,14 @@ namespace SongQuiz
 			// 
 			// pic_avatar
 			// 
+			this.pic_avatar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.pic_avatar.Location = new System.Drawing.Point(45, 3);
 			this.pic_avatar.Name = "pic_avatar";
 			this.pic_avatar.Size = new System.Drawing.Size(170, 170);
 			this.pic_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_avatar.TabIndex = 1;
 			this.pic_avatar.TabStop = false;
+			this.pic_avatar.Click += new System.EventHandler(this.Pic_avatarClick);
 			// 
 			// pic_logo
 			// 
@@ -135,6 +148,17 @@ namespace SongQuiz
 			this.pnl_botones.Size = new System.Drawing.Size(1122, 828);
 			this.pnl_botones.TabIndex = 3;
 			// 
+			// lbl_copyright
+			// 
+			this.lbl_copyright.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+			this.lbl_copyright.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.lbl_copyright.Location = new System.Drawing.Point(301, 798);
+			this.lbl_copyright.Name = "lbl_copyright";
+			this.lbl_copyright.Size = new System.Drawing.Size(547, 30);
+			this.lbl_copyright.TabIndex = 12;
+			this.lbl_copyright.Text = "© 2023 SongQuiz. Todos los derechos reservados. Desarrollado por Aramis Terza.";
+			this.lbl_copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// button11
 			// 
 			this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -159,7 +183,7 @@ namespace SongQuiz
 			this.button10.ForeColor = System.Drawing.Color.Gold;
 			this.button10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button10.Location = new System.Drawing.Point(822, 724);
+			this.button10.Location = new System.Drawing.Point(566, 724);
 			this.button10.Name = "button10";
 			this.button10.Size = new System.Drawing.Size(200, 42);
 			this.button10.TabIndex = 5;
@@ -173,7 +197,7 @@ namespace SongQuiz
 			this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button9.Location = new System.Drawing.Point(127, 724);
+			this.button9.Location = new System.Drawing.Point(367, 724);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(200, 42);
 			this.button9.TabIndex = 7;
@@ -203,7 +227,7 @@ namespace SongQuiz
 			this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button7.ForeColor = System.Drawing.Color.LightBlue;
 			this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button7.Location = new System.Drawing.Point(822, 334);
+			this.button7.Location = new System.Drawing.Point(566, 334);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(200, 42);
 			this.button7.TabIndex = 11;
@@ -219,7 +243,7 @@ namespace SongQuiz
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button1.ForeColor = System.Drawing.Color.Plum;
 			this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button1.Location = new System.Drawing.Point(127, 334);
+			this.button1.Location = new System.Drawing.Point(367, 334);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(200, 42);
 			this.button1.TabIndex = 1;
@@ -233,7 +257,7 @@ namespace SongQuiz
 			this.btn_mix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_mix.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_mix.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_mix.Location = new System.Drawing.Point(768, 418);
+			this.btn_mix.Location = new System.Drawing.Point(512, 418);
 			this.btn_mix.Name = "btn_mix";
 			this.btn_mix.Size = new System.Drawing.Size(300, 300);
 			this.btn_mix.TabIndex = 10;
@@ -267,7 +291,7 @@ namespace SongQuiz
 			this.btn_latino.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_latino.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_latino.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_latino.Location = new System.Drawing.Point(768, 28);
+			this.btn_latino.Location = new System.Drawing.Point(512, 28);
 			this.btn_latino.Name = "btn_latino";
 			this.btn_latino.Size = new System.Drawing.Size(300, 300);
 			this.btn_latino.TabIndex = 4;
@@ -296,7 +320,7 @@ namespace SongQuiz
 			this.btn_rap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_rap.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_rap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_rap.Location = new System.Drawing.Point(77, 418);
+			this.btn_rap.Location = new System.Drawing.Point(317, 418);
 			this.btn_rap.Name = "btn_rap";
 			this.btn_rap.Size = new System.Drawing.Size(300, 300);
 			this.btn_rap.TabIndex = 6;
@@ -312,49 +336,13 @@ namespace SongQuiz
 			this.btn_pop.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_pop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_pop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_pop.Location = new System.Drawing.Point(77, 28);
+			this.btn_pop.Location = new System.Drawing.Point(317, 28);
 			this.btn_pop.Name = "btn_pop";
 			this.btn_pop.Size = new System.Drawing.Size(300, 300);
 			this.btn_pop.TabIndex = 0;
 			this.btn_pop.Tag = "1";
 			this.btn_pop.UseVisualStyleBackColor = true;
 			this.btn_pop.Click += new System.EventHandler(this.Btn_partidaClick);
-			// 
-			// btn_avatar
-			// 
-			this.btn_avatar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn_avatar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_avatar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_avatar.Location = new System.Drawing.Point(718, 12);
-			this.btn_avatar.Name = "btn_avatar";
-			this.btn_avatar.Size = new System.Drawing.Size(193, 38);
-			this.btn_avatar.TabIndex = 3;
-			this.btn_avatar.Text = "Modificar Usuario";
-			this.btn_avatar.UseVisualStyleBackColor = true;
-			// 
-			// btn_cerrar
-			// 
-			this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btn_cerrar.Location = new System.Drawing.Point(917, 12);
-			this.btn_cerrar.Name = "btn_cerrar";
-			this.btn_cerrar.Size = new System.Drawing.Size(193, 38);
-			this.btn_cerrar.TabIndex = 4;
-			this.btn_cerrar.Text = "Cerrar Sesión";
-			this.btn_cerrar.UseVisualStyleBackColor = true;
-			this.btn_cerrar.Click += new System.EventHandler(this.Btn_cerrarClick);
-			// 
-			// lbl_copyright
-			// 
-			this.lbl_copyright.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-			this.lbl_copyright.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.lbl_copyright.Location = new System.Drawing.Point(301, 798);
-			this.lbl_copyright.Name = "lbl_copyright";
-			this.lbl_copyright.Size = new System.Drawing.Size(547, 30);
-			this.lbl_copyright.TabIndex = 12;
-			this.lbl_copyright.Text = "© 2023 SongQuiz. Todos los derechos reservados. Desarrollado por Aramis Terza.";
-			this.lbl_copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// FormMenu
 			// 
@@ -381,7 +369,6 @@ namespace SongQuiz
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.Label lbl_copyright;
-		private System.Windows.Forms.Button btn_avatar;
 		private System.Windows.Forms.Button btn_cerrar;
 		private System.Windows.Forms.PictureBox pic_avatar;
 		private System.Windows.Forms.Label lbl_nombre;
