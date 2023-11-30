@@ -108,7 +108,6 @@ namespace SongQuiz
 			this.pic_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_avatar.TabIndex = 1;
 			this.pic_avatar.TabStop = false;
-			this.pic_avatar.Click += new System.EventHandler(this.Pic_avatarClick);
 			// 
 			// pic_logo
 			// 

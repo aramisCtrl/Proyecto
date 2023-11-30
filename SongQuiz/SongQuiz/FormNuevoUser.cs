@@ -71,7 +71,7 @@ namespace SongQuiz
 		
 		void Btn_confirmarClick(object sender, EventArgs e)
 		{
-			if(pic_central.Image != null && txt_usuario.Text != "" && txt_contraseña.Text != ""){
+			if(pic_central.Image != null && txt_usuario.Text != "" && txt_contraseña.Text != "" && txt_confirmar_contraseña.Text == txt_contraseña.Text){
 				
 				int avatar = int.Parse(pic_central.Tag.ToString());
 				string nombre = txt_usuario.Text;
@@ -99,6 +99,18 @@ namespace SongQuiz
 				MessageBox.Show("Campos incompletos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 				
+		}
+				
+		
+		void Txt_contraseñaTextChanged(object sender, EventArgs e)
+		{
+			txt_contraseña.PasswordChar = '●';
+		}
+				
+		
+		void Txt_confirmar_contraseñaTextChanged(object sender, EventArgs e)
+		{
+			txt_contraseña.PasswordChar = '●';
 		}
 	}
 }

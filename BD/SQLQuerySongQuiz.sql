@@ -407,3 +407,15 @@ select usua_id, usua_nombre, avat_direccion from usuarios
 left join avatares on avat_id = usua_avat_id
 where usua_nombre = @nombre
 end
+
+create procedure sp_ObtenerPuntajes(
+	@id_categoria int 
+)
+as
+begin
+select usua_nombre, usua_avat_id, punt_puntaje, punt_tiempo from usuarios
+left join puntajes on punt_usua_id = punt_usua_id
+left join categorias on cate_id = punt_cate_id
+where punt_cate_id = @id_categoria
+order by punt_puntaje, punt_tiempo
+end

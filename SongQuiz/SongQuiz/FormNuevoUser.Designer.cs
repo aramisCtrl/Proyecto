@@ -57,6 +57,8 @@ namespace SongQuiz
 			this.btn_confirmar = new System.Windows.Forms.Button();
 			this.btn_cancelar = new System.Windows.Forms.Button();
 			this.lbl_avatar = new System.Windows.Forms.Label();
+			this.txt_confirmar_contraseña = new System.Windows.Forms.TextBox();
+			this.lbl_confirmar_contraseña = new System.Windows.Forms.Label();
 			this.lay_avatares.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pic12)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic11)).BeginInit();
@@ -260,18 +262,19 @@ namespace SongQuiz
 			// 
 			this.txt_contraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txt_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_contraseña.Location = new System.Drawing.Point(249, 611);
+			this.txt_contraseña.Location = new System.Drawing.Point(249, 579);
 			this.txt_contraseña.Name = "txt_contraseña";
-			this.txt_contraseña.Size = new System.Drawing.Size(213, 30);
+			this.txt_contraseña.Size = new System.Drawing.Size(222, 30);
 			this.txt_contraseña.TabIndex = 1;
+			this.txt_contraseña.TextChanged += new System.EventHandler(this.Txt_contraseñaTextChanged);
 			// 
 			// txt_usuario
 			// 
 			this.txt_usuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.txt_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txt_usuario.Location = new System.Drawing.Point(249, 546);
+			this.txt_usuario.Location = new System.Drawing.Point(249, 528);
 			this.txt_usuario.Name = "txt_usuario";
-			this.txt_usuario.Size = new System.Drawing.Size(213, 30);
+			this.txt_usuario.Size = new System.Drawing.Size(222, 30);
 			this.txt_usuario.TabIndex = 0;
 			// 
 			// lbl_contraseña
@@ -279,9 +282,9 @@ namespace SongQuiz
 			this.lbl_contraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lbl_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_contraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.lbl_contraseña.Location = new System.Drawing.Point(49, 602);
+			this.lbl_contraseña.Location = new System.Drawing.Point(23, 570);
 			this.lbl_contraseña.Name = "lbl_contraseña";
-			this.lbl_contraseña.Size = new System.Drawing.Size(194, 48);
+			this.lbl_contraseña.Size = new System.Drawing.Size(220, 48);
 			this.lbl_contraseña.TabIndex = 8;
 			this.lbl_contraseña.Text = "Contraseña:";
 			this.lbl_contraseña.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -291,9 +294,9 @@ namespace SongQuiz
 			this.lbl_usuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_usuario.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.lbl_usuario.Location = new System.Drawing.Point(49, 537);
+			this.lbl_usuario.Location = new System.Drawing.Point(23, 519);
 			this.lbl_usuario.Name = "lbl_usuario";
-			this.lbl_usuario.Size = new System.Drawing.Size(194, 48);
+			this.lbl_usuario.Size = new System.Drawing.Size(220, 48);
 			this.lbl_usuario.TabIndex = 7;
 			this.lbl_usuario.Text = "Usuario:";
 			this.lbl_usuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -334,12 +337,36 @@ namespace SongQuiz
 			this.lbl_avatar.Text = "Avatar:";
 			this.lbl_avatar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
+			// txt_confirmar_contraseña
+			// 
+			this.txt_confirmar_contraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.txt_confirmar_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txt_confirmar_contraseña.Location = new System.Drawing.Point(249, 631);
+			this.txt_confirmar_contraseña.Name = "txt_confirmar_contraseña";
+			this.txt_confirmar_contraseña.Size = new System.Drawing.Size(222, 30);
+			this.txt_confirmar_contraseña.TabIndex = 10;
+			this.txt_confirmar_contraseña.TextChanged += new System.EventHandler(this.Txt_confirmar_contraseñaTextChanged);
+			// 
+			// lbl_confirmar_contraseña
+			// 
+			this.lbl_confirmar_contraseña.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.lbl_confirmar_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_confirmar_contraseña.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.lbl_confirmar_contraseña.Location = new System.Drawing.Point(23, 622);
+			this.lbl_confirmar_contraseña.Name = "lbl_confirmar_contraseña";
+			this.lbl_confirmar_contraseña.Size = new System.Drawing.Size(220, 48);
+			this.lbl_confirmar_contraseña.TabIndex = 11;
+			this.lbl_confirmar_contraseña.Text = "Confirmar contraseña:";
+			this.lbl_confirmar_contraseña.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// FormNuevoUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.MediumOrchid;
 			this.ClientSize = new System.Drawing.Size(767, 775);
+			this.Controls.Add(this.txt_confirmar_contraseña);
+			this.Controls.Add(this.lbl_confirmar_contraseña);
 			this.Controls.Add(this.lbl_avatar);
 			this.Controls.Add(this.btn_cancelar);
 			this.Controls.Add(this.btn_confirmar);
@@ -371,6 +398,8 @@ namespace SongQuiz
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.Label lbl_confirmar_contraseña;
+		private System.Windows.Forms.TextBox txt_confirmar_contraseña;
 		private System.Windows.Forms.Label lbl_avatar;
 		private System.Windows.Forms.Button btn_cancelar;
 		private System.Windows.Forms.Button btn_confirmar;
