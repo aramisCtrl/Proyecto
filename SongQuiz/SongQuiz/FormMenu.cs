@@ -16,6 +16,7 @@ namespace SongQuiz
         public ClassPartida mipartida;
         string path;
         int aux = 0;
+        System.Media.SoundPlayer player;
 
         public FormMenu(ClassUsuario miUsuario)
         {
@@ -99,13 +100,16 @@ namespace SongQuiz
                     MessageBox.Show("No se encontraron datos para la categoría especificada.");
                 }
             }
-            FormPartida form = new FormPartida(mipartida);
+            FormPartida form = new FormPartida(mipartida, miusuario, miconexion);
             form.ShowDialog();
+            player.Play();
             aux = 0;
         }
 
         void FormMenuLoad(object sender, EventArgs e)
         {
+        	player = new System.Media.SoundPlayer(@""+path+"\\Canciones\\Jazz.wav");
+			player.Play();
         	pic_avatar.Image = Image.FromFile(@""+path+miusuario.avatar);
         	lbl_nombre.Text = miusuario.nombre;
         	
@@ -119,10 +123,25 @@ namespace SongQuiz
             miconexion = new ClassConexionSQL();
             miconexion.CrearConexion();
         }
+        
 		
 		void Btn_cerrarClick(object sender, EventArgs e)
 		{
+			
 			this.Close();
+			player.Stop();
+		}
+		
+		
+		void btn_puntuacionesClick(object sender, EventArgs e)
+		{
+			Button btn_aux;
+            btn_aux = (Button)sender;
+            int categoria = int.Parse(btn_aux.Tag.ToString());
+            
+            FormPuntajes form = new FormPuntajes(miconexion, categoria);
+            form.ShowDialog();
+            
 		}
     }
 }

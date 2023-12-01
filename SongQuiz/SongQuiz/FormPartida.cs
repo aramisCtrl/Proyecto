@@ -1,28 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Threading;
+using System.Data.SqlClient;
+using System.Data;
+using System.IO;
+using System.Xml;
 
 namespace SongQuiz
 {
 	public partial class FormPartida : Form
 	{
+		int puntaje_inicial = 1000;
+		int punt_tiempo=1;
+		int puntaje = 0;
 		int opcionSeleccionada;
 		int opcionesCounter = 0;
 		int segundos = 0;
 		int segundos_countdown = 3;
 		int ronda = 0;
-		ClassPartida miPartida;
-		Button[] btn_opcion;
-		string path;
 		int tiempo = 1;
 		int respuestaCorrecta;
+		string path;
+		
+		ClassPartida miPartida;
+		ClassUsuario miUsuario;
+		ClassConexionSQL miConexion;
+		Button[] btn_opcion;
 		System.Media.SoundPlayer player;
 		
-
-		public FormPartida(ClassPartida mipartida)
+		public FormPartida(ClassPartida mipartida, ClassUsuario miusuario, ClassConexionSQL miconexion)
 		{
+			miUsuario = miusuario;
 			miPartida = mipartida;
+			miConexion = miconexion;
+			
 			player = new System.Media.SoundPlayer();
 			InitializeComponent();
 			this.Load += new EventHandler(FormPartidaLoad);
@@ -37,10 +49,13 @@ namespace SongQuiz
 			
 			IniciarCuentaRegresiva();
 		}
-		
-		
+			
 		void FormPartidaLoad(object sender, EventArgs e)
 		{
+			pic_categoria.Image = Image.FromFile(@""+path+"\\Imagenes\\Categorias\\"+miPartida.categoria_id+".png");
+			pic_avatar.Image = Image.FromFile(@""+path+miUsuario.avatar);
+			lbl_nombre.Text = miUsuario.nombre;
+			
 			this.FormBorderStyle = FormBorderStyle.None;
 			this.WindowState = FormWindowState.Normal;
 
@@ -61,7 +76,6 @@ namespace SongQuiz
 			
 			pic_portada.Image = Image.FromFile(@""+path+"\\Imagenes\\Logos\\Logo Transparente.png");
 		}
-		
 
 		void IniciarCuentaRegresiva()
 		{
@@ -70,7 +84,6 @@ namespace SongQuiz
 			lbl_timer.Text = segundos_countdown.ToString();
 			tmr_countdown.Start();
 		}
-		
 
 		void Tmr_countdownTick(object sender, EventArgs e)
 		{
@@ -92,7 +105,6 @@ namespace SongQuiz
 			}
 		}
 
-		
 		void partida()
 		{
 			btn_opcion[0].Enabled=true;
@@ -100,18 +112,22 @@ namespace SongQuiz
 			btn_opcion[2].Enabled=true;
 			btn_opcion[3].Enabled=true;
 			lbl_timer.Text = tiempo.ToString();
+			
 			if (ronda < 5)
 			{
+				lbl_score.Text = "";
+				puntaje_inicial=1000;
 				tmr_partida.Start();
+				tmr_puntaje.Start();
 				ReproducirCancion(miPartida.direccion[ronda]);
 				MostrarPortadaYOpciones();
 			}
 			else
 			{
+				
 				MessageBox.Show("Juego completado");
 			}
 		}
-		
 
 		void ReproducirCancion(string ruta)
 		{
@@ -120,13 +136,12 @@ namespace SongQuiz
 			player.Play();
 		}
 
-		
 		void MostrarPortadaYOpciones()
 		{
 			int[] rnd = new int[4];
 			Random random = new Random();
 
-			pic_portada.Image = Image.FromFile(@"" + path + miPartida.portada_direccion[ronda]);
+			pic_portada.Image = Image.FromFile(@"" + path + miPartida.portada_blur_direccion[ronda]);
 
 			string[] opciones = new string[4];
 
@@ -160,7 +175,6 @@ namespace SongQuiz
 			opcionesCounter += 3;
 		}
 
-		
 		void BtnOpcionClick(object sender, EventArgs e)
 		{
 			btn_opcion[0].Enabled=false;
@@ -172,33 +186,38 @@ namespace SongQuiz
 			opcionSeleccionada = int.Parse(btnClickeado.Tag.ToString());
 
 			tmr_partida.Stop();
+			tmr_puntaje.Stop();
 			
 			tmr_espera1.Start();
 		}
 
-		
 		void VerificarRespuesta(int opcionSeleccionada)
 		{
 			if (opcionSeleccionada == respuestaCorrecta)
 			{
 				btn_opcion[respuestaCorrecta].BackColor = Color.Green;
 				player.SoundLocation = (path + "\\Canciones\\Correcta.wav");
+				lbl_score.ForeColor = Color.Green;
+				lbl_score.Text = "+"+puntaje_inicial+" Puntos";
+				puntaje += puntaje_inicial;
     			player.Play();
 			}
 			else
 			{
 				btn_opcion[opcionSeleccionada].BackColor = Color.Red;
 				btn_opcion[respuestaCorrecta].BackColor = Color.Green;
+				lbl_score.ForeColor = Color.Red;
+				lbl_score.Text = "+0 Puntos";
 				player.SoundLocation = (path + "\\Canciones\\Incorrecta.wav");
     			player.Play();
 			}
-			
+			pic_portada.Image = Image.FromFile(@"" + path + miPartida.portada_direccion[ronda]);
 			lbl_cancion.Text = miPartida.cancion[ronda];
 			lbl_artista.Text = "de "+miPartida.artista[ronda];
+			lbl_puntaje.Text = "Puntaje: " + puntaje;
 
 			tmr_espera2.Start();
 		}
-		
 		
 		void SiguientePregunta()
 		{
@@ -212,25 +231,32 @@ namespace SongQuiz
 			{
 				player.Stop();
 				MessageBox.Show("Juego completado");
+				string comando = miUsuario.id + " ," + puntaje + " ," + punt_tiempo + " ," + miPartida.categoria_id;
+				miConexion.EjecutarComandoSQL("exec sp_InsertOrUpdatePuntaje " + comando);
+
 				this.Close();
 			}
 		}
 		
-		
 		void Tmr_partidaTick(object sender, EventArgs e)
 		{
+			punt_tiempo++;
 			tiempo++;
-	
+		
 	        if (tiempo == 26)
 	        {
+	        	tmr_partida.Stop();
 				btn_opcion[0].Enabled=false;
 				btn_opcion[1].Enabled=false;
 				btn_opcion[2].Enabled=false;
 				btn_opcion[3].Enabled=false;
 	            btn_opcion[respuestaCorrecta].BackColor = Color.Green;
 	            
+	            pic_portada.Image = Image.FromFile(@"" + path + miPartida.portada_direccion[ronda]);
 	            lbl_cancion.Text = miPartida.cancion[ronda];
 				lbl_artista.Text = "de "+miPartida.artista[ronda];
+				lbl_score.ForeColor = Color.Red;
+				lbl_score.Text = "+0 Puntos";
 	
 	            tmr_espera2.Start();
 	        }
@@ -239,7 +265,6 @@ namespace SongQuiz
 	        	lbl_timer.Text = tiempo.ToString();
 	        }
 		}
-		
 		
 		void Tmr_espera2Tick(object sender, EventArgs e)
 		{
@@ -257,12 +282,16 @@ namespace SongQuiz
             SiguientePregunta();
 		}
 		
-		
 		void Tmr_espera1Tick(object sender, EventArgs e)
 		{
 			tmr_espera1.Stop();
             tmr_espera1.Dispose();
 			VerificarRespuesta(opcionSeleccionada);	
+		}
+		
+		void Tmr_puntajeTick(object sender, EventArgs e)
+		{
+			puntaje_inicial -=20;
 		}
 	}
 }

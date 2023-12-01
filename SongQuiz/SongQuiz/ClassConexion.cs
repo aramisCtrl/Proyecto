@@ -2,7 +2,10 @@
 using System.Data;
 using System.Windows.Forms;
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
+using System.Xml;
 
 public class ClassConexionSQL
 {
@@ -62,34 +65,42 @@ public class ClassConexionSQL
 		}
 	}
 
-	public bool LLenarGrid(ref DataGridView grid, string Consulta)
-	{
-		try
-		{
-			if (this.Conectar())
-			{
-				SqlDataAdapter adaptadorDatos = new SqlDataAdapter(Consulta, conexion);
+	public bool LLenarGrid(ref DataGridView grid, string Consulta, Dictionary<string, object> parametros)
+    {
+        try
+        {
+            if (this.Conectar())
+            {
+                SqlDataAdapter adaptadorDatos = new SqlDataAdapter(Consulta, conexion);
 
-				DataTable dtDatos = new DataTable();
+                if (parametros != null && parametros.Count > 0)
+                {
+                    foreach (var parametro in parametros)
+                    {
+                        adaptadorDatos.SelectCommand.Parameters.AddWithValue(parametro.Key, parametro.Value);
+                    }
+                }
 
-				adaptadorDatos.Fill(dtDatos);
+                DataTable dtDatos = new DataTable();
 
-				grid.DataSource = dtDatos;
-				
-				this.Desconectar();
+                adaptadorDatos.Fill(dtDatos);
 
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-		catch
-		{
-			return false;
-		}
-	}
+                grid.DataSource = dtDatos;
+
+                this.Desconectar();
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch
+        {
+            return false;
+        }
+    }
 	
 
 	public DataRow ObtenerData(String Consulta)

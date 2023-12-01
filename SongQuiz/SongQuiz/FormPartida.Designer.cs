@@ -37,6 +37,7 @@ namespace SongQuiz
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPartida));
 			this.tmr_countdown = new System.Windows.Forms.Timer(this.components);
 			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
@@ -50,16 +51,24 @@ namespace SongQuiz
 			this.btn_opcion2 = new System.Windows.Forms.Button();
 			this.btn_opcion4 = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.lbl_score = new System.Windows.Forms.Label();
+			this.lbl_puntaje = new System.Windows.Forms.Label();
+			this.lbl_nombre = new System.Windows.Forms.Label();
+			this.pic_avatar = new System.Windows.Forms.PictureBox();
 			this.lbl_artista = new System.Windows.Forms.Label();
 			this.lbl_cancion = new System.Windows.Forms.Label();
 			this.pic_portada = new System.Windows.Forms.PictureBox();
+			this.pic_categoria = new System.Windows.Forms.PictureBox();
 			this.tmr_partida = new System.Windows.Forms.Timer(this.components);
 			this.tmr_espera2 = new System.Windows.Forms.Timer(this.components);
 			this.tmr_espera1 = new System.Windows.Forms.Timer(this.components);
+			this.tmr_puntaje = new System.Windows.Forms.Timer(this.components);
 			this.panel2.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic_portada)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pic_categoria)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tmr_countdown
@@ -131,7 +140,7 @@ namespace SongQuiz
 			// 
 			// tableLayoutPanel1
 			// 
-			this.tableLayoutPanel1.BackColor = System.Drawing.Color.MediumOrchid;
+			this.tableLayoutPanel1.BackColor = System.Drawing.Color.CornflowerBlue;
 			this.tableLayoutPanel1.ColumnCount = 2;
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -174,6 +183,7 @@ namespace SongQuiz
 			// 
 			// btn_opcion2
 			// 
+			this.btn_opcion2.BackColor = System.Drawing.Color.White;
 			this.btn_opcion2.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_opcion2.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.btn_opcion2.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,7 +192,7 @@ namespace SongQuiz
 			this.btn_opcion2.Size = new System.Drawing.Size(636, 87);
 			this.btn_opcion2.TabIndex = 2;
 			this.btn_opcion2.UseMnemonic = false;
-			this.btn_opcion2.UseVisualStyleBackColor = true;
+			this.btn_opcion2.UseVisualStyleBackColor = false;
 			// 
 			// btn_opcion4
 			// 
@@ -198,11 +208,16 @@ namespace SongQuiz
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.MediumOrchid;
+			this.panel1.BackColor = System.Drawing.Color.Transparent;
+			this.panel1.Controls.Add(this.lbl_score);
+			this.panel1.Controls.Add(this.lbl_puntaje);
+			this.panel1.Controls.Add(this.lbl_nombre);
+			this.panel1.Controls.Add(this.pic_avatar);
 			this.panel1.Controls.Add(this.lbl_artista);
 			this.panel1.Controls.Add(this.lbl_cancion);
 			this.panel1.Controls.Add(this.pic_portada);
 			this.panel1.Controls.Add(this.lbl_timer);
+			this.panel1.Controls.Add(this.pic_categoria);
 			this.panel1.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -210,6 +225,47 @@ namespace SongQuiz
 			this.panel1.Size = new System.Drawing.Size(1283, 813);
 			this.panel1.TabIndex = 3;
 			this.panel1.TabStop = true;
+			// 
+			// lbl_score
+			// 
+			this.lbl_score.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.lbl_score.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_score.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.lbl_score.Location = new System.Drawing.Point(778, 206);
+			this.lbl_score.Name = "lbl_score";
+			this.lbl_score.Size = new System.Drawing.Size(307, 51);
+			this.lbl_score.TabIndex = 7;
+			this.lbl_score.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lbl_puntaje
+			// 
+			this.lbl_puntaje.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_puntaje.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.lbl_puntaje.Location = new System.Drawing.Point(24, 240);
+			this.lbl_puntaje.Name = "lbl_puntaje";
+			this.lbl_puntaje.Size = new System.Drawing.Size(307, 51);
+			this.lbl_puntaje.TabIndex = 6;
+			this.lbl_puntaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lbl_nombre
+			// 
+			this.lbl_nombre.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_nombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.lbl_nombre.Location = new System.Drawing.Point(24, 189);
+			this.lbl_nombre.Name = "lbl_nombre";
+			this.lbl_nombre.Size = new System.Drawing.Size(307, 51);
+			this.lbl_nombre.TabIndex = 5;
+			this.lbl_nombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// pic_avatar
+			// 
+			this.pic_avatar.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pic_avatar.Location = new System.Drawing.Point(93, 16);
+			this.pic_avatar.Name = "pic_avatar";
+			this.pic_avatar.Size = new System.Drawing.Size(170, 170);
+			this.pic_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pic_avatar.TabIndex = 4;
+			this.pic_avatar.TabStop = false;
 			// 
 			// lbl_artista
 			// 
@@ -238,13 +294,24 @@ namespace SongQuiz
 			// pic_portada
 			// 
 			this.pic_portada.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pic_portada.Location = new System.Drawing.Point(316, 42);
+			this.pic_portada.Location = new System.Drawing.Point(316, 28);
 			this.pic_portada.Margin = new System.Windows.Forms.Padding(100);
 			this.pic_portada.Name = "pic_portada";
 			this.pic_portada.Size = new System.Drawing.Size(642, 623);
 			this.pic_portada.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_portada.TabIndex = 1;
 			this.pic_portada.TabStop = false;
+			// 
+			// pic_categoria
+			// 
+			this.pic_categoria.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.pic_categoria.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.pic_categoria.Location = new System.Drawing.Point(1091, 146);
+			this.pic_categoria.Name = "pic_categoria";
+			this.pic_categoria.Size = new System.Drawing.Size(170, 170);
+			this.pic_categoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pic_categoria.TabIndex = 8;
+			this.pic_categoria.TabStop = false;
 			// 
 			// tmr_partida
 			// 
@@ -261,29 +328,43 @@ namespace SongQuiz
 			this.tmr_espera1.Interval = 1500;
 			this.tmr_espera1.Tick += new System.EventHandler(this.Tmr_espera1Tick);
 			// 
+			// tmr_puntaje
+			// 
+			this.tmr_puntaje.Interval = 500;
+			this.tmr_puntaje.Tick += new System.EventHandler(this.Tmr_puntajeTick);
+			// 
 			// FormPartida
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.RoyalBlue;
+			this.BackColor = System.Drawing.Color.CornflowerBlue;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1283, 1000);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel2);
 			this.Cursor = System.Windows.Forms.Cursors.Default;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "FormPartida";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "FormPartida";
+			this.Text = "Partida";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FormPartidaLoad);
 			this.panel2.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic_portada)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pic_categoria)).EndInit();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.PictureBox pic_categoria;
+		private System.Windows.Forms.Label lbl_score;
+		private System.Windows.Forms.PictureBox pic_avatar;
+		private System.Windows.Forms.Label lbl_nombre;
+		private System.Windows.Forms.Label lbl_puntaje;
+		private System.Windows.Forms.Timer tmr_puntaje;
 		private System.Windows.Forms.Timer tmr_espera1;
 		private System.Windows.Forms.Label lbl_cancion;
 		private System.Windows.Forms.Label lbl_artista;

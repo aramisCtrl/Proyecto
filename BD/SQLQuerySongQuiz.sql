@@ -322,8 +322,8 @@ ALTER TABLE canciones
 ADD canc_portada_blur_direccion VARCHAR(255)
 
 UPDATE canciones
-SET canc_portada_blur_direccion = '\Imagenes\Portadas\Rap\California Love_blur.jpg' 
-Where canc_id = 67
+SET canc_portada_blur_direccion = '\Imagenes\Portadas\Pop\Dark Horse (feat. Juicy J)_blur.jpg' 
+Where canc_id = 9
 
 select * from canciones
 
@@ -419,3 +419,39 @@ left join categorias on cate_id = punt_cate_id
 where punt_cate_id = @id_categoria
 order by punt_puntaje, punt_tiempo
 end
+
+CREATE PROCEDURE sp_LlenarGrilla
+(
+	@categoria INT
+)
+AS
+BEGIN
+	SELECT punt_id, punt_puntaje, punt_tiempo, usua_nombre, avat_direccion
+	FROM puntajes
+	LEFT JOIN usuarios ON usua_id = punt_usua_id
+	LEFT JOIN avatares ON avat_id = usua_avat_id
+	WHERE punt_cate_id = @categoria
+	ORDER BY punt_puntaje DESC, punt_tiempo DESC;
+END
+
+
+CREATE PROCEDURE sp_InsertOrUpdatePuntaje
+	@usua_id INT,
+	@punt_puntaje INT,
+	@punt_tiempo VARCHAR(255),
+	@punt_cate_id INT
+AS
+BEGIN
+	IF EXISTS (SELECT 1 FROM puntajes WHERE punt_usua_id = @usua_id AND punt_cate_id = @punt_cate_id)
+	BEGIN
+		UPDATE puntajes
+		SET punt_puntaje = CASE WHEN @punt_puntaje > punt_puntaje THEN @punt_puntaje ELSE punt_puntaje END,
+			punt_tiempo = CASE WHEN @punt_tiempo > punt_tiempo THEN @punt_tiempo ELSE punt_tiempo END
+		WHERE punt_usua_id = @usua_id AND punt_cate_id = @punt_cate_id;
+	END
+	ELSE
+	BEGIN
+		INSERT INTO puntajes (punt_usua_id, punt_puntaje, punt_tiempo, punt_cate_id)
+		VALUES (@usua_id, @punt_puntaje, @punt_tiempo, @punt_cate_id);
+	END
+END

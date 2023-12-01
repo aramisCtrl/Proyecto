@@ -81,7 +81,7 @@ namespace SongQuiz
 					try
 					{
 						miConexion.EjecutarComandoSQL("insert into usuarios (usua_nombre, usua_contraseña, usua_avat_id) values ('"+nombre+"', '"+contraseña+"', "+avatar+")");
-						MessageBox.Show("Usuario Creado Con Éxito", "Usuario Creado", MessageBoxButtons.OK);
+						MessageBox.Show("Usuario creado con éxito", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 						this.Close();
 					}
 					
@@ -96,7 +96,7 @@ namespace SongQuiz
 				}
 			}
 			else{
-				MessageBox.Show("Campos incompletos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Compruebe los datos ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 				
 		}
@@ -110,7 +110,7 @@ namespace SongQuiz
 		
 		void Txt_confirmar_contraseñaTextChanged(object sender, EventArgs e)
 		{
-			txt_contraseña.PasswordChar = '●';
+			txt_confirmar_contraseña.PasswordChar = '●';
 		}
 	}
 }

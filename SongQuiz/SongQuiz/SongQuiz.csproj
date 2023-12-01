@@ -74,6 +74,10 @@
     <Compile Include="FormPartida.Designer.cs">
       <DependentUpon>FormPartida.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPuntajes.cs" />
+    <Compile Include="FormPuntajes.Designer.cs">
+      <DependentUpon>FormPuntajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs" />
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPartida.resx">
       <DependentUpon>FormPartida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPuntajes.resx">
+      <DependentUpon>FormPuntajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

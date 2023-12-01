@@ -80,7 +80,8 @@ namespace SongQuiz
 			// 
 			this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.btn_cerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.btn_cerrar.Location = new System.Drawing.Point(917, 12);
 			this.btn_cerrar.Name = "btn_cerrar";
 			this.btn_cerrar.Size = new System.Drawing.Size(193, 38);
@@ -95,14 +96,14 @@ namespace SongQuiz
 			this.lbl_nombre.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.lbl_nombre.Location = new System.Drawing.Point(3, 173);
 			this.lbl_nombre.Name = "lbl_nombre";
-			this.lbl_nombre.Size = new System.Drawing.Size(259, 51);
+			this.lbl_nombre.Size = new System.Drawing.Size(315, 51);
 			this.lbl_nombre.TabIndex = 2;
-			this.lbl_nombre.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.lbl_nombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// pic_avatar
 			// 
 			this.pic_avatar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.pic_avatar.Location = new System.Drawing.Point(45, 3);
+			this.pic_avatar.Location = new System.Drawing.Point(69, 3);
 			this.pic_avatar.Name = "pic_avatar";
 			this.pic_avatar.Size = new System.Drawing.Size(170, 170);
 			this.pic_avatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,14 +165,16 @@ namespace SongQuiz
 			this.button11.AutoSize = true;
 			this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button11.ForeColor = System.Drawing.Color.YellowGreen;
+			this.button11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.button11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.button11.Location = new System.Drawing.Point(463, 334);
 			this.button11.Name = "button11";
 			this.button11.Size = new System.Drawing.Size(200, 42);
 			this.button11.TabIndex = 3;
+			this.button11.Tag = "2";
 			this.button11.Text = "Puntuaciones";
 			this.button11.UseVisualStyleBackColor = true;
+			this.button11.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
 			// button10
 			// 
@@ -179,29 +182,32 @@ namespace SongQuiz
 			this.button10.AutoSize = true;
 			this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button10.ForeColor = System.Drawing.Color.Gold;
+			this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.button10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.button10.Location = new System.Drawing.Point(566, 724);
 			this.button10.Name = "button10";
 			this.button10.Size = new System.Drawing.Size(200, 42);
 			this.button10.TabIndex = 5;
+			this.button10.Tag = "6";
 			this.button10.Text = "Puntuaciones";
 			this.button10.UseVisualStyleBackColor = true;
+			this.button10.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
 			// button9
 			// 
 			this.button9.AutoSize = true;
 			this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.button9.Location = new System.Drawing.Point(367, 724);
 			this.button9.Name = "button9";
 			this.button9.Size = new System.Drawing.Size(200, 42);
-			this.button9.TabIndex = 7;
+			this.button9.TabIndex = 4;
 			this.button9.Text = "Puntuaciones";
 			this.button9.UseVisualStyleBackColor = true;
+			this.button9.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
 			// button8
 			// 
@@ -209,14 +215,16 @@ namespace SongQuiz
 			this.button8.AutoSize = true;
 			this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button8.ForeColor = System.Drawing.Color.Chartreuse;
+			this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.button8.Location = new System.Drawing.Point(472, 724);
 			this.button8.Name = "button8";
 			this.button8.Size = new System.Drawing.Size(200, 42);
 			this.button8.TabIndex = 9;
+			this.button8.Tag = "5";
 			this.button8.Text = "Puntuaciones";
 			this.button8.UseVisualStyleBackColor = true;
+			this.button8.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
 			// button7
 			// 
@@ -224,14 +232,16 @@ namespace SongQuiz
 			this.button7.AutoSize = true;
 			this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button7.ForeColor = System.Drawing.Color.LightBlue;
+			this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.button7.Location = new System.Drawing.Point(566, 334);
 			this.button7.Name = "button7";
 			this.button7.Size = new System.Drawing.Size(200, 42);
 			this.button7.TabIndex = 11;
+			this.button7.Tag = "3";
 			this.button7.Text = "Puntuaciones";
 			this.button7.UseVisualStyleBackColor = true;
+			this.button7.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
 			// button1
 			// 
@@ -240,14 +250,16 @@ namespace SongQuiz
 			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.Color.Plum;
+			this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
 			this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.button1.Location = new System.Drawing.Point(367, 334);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(200, 42);
 			this.button1.TabIndex = 1;
+			this.button1.Tag = "1";
 			this.button1.Text = "Puntuaciones";
 			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
 			// btn_mix
 			// 
@@ -347,18 +359,17 @@ namespace SongQuiz
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.MediumOrchid;
+			this.BackColor = System.Drawing.Color.CornflowerBlue;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ClientSize = new System.Drawing.Size(1122, 1055);
 			this.Controls.Add(this.pnl_botones);
 			this.Controls.Add(this.panel1);
 			this.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "FormMenu";
-			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SongQuiz";
-			this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
 			this.Load += new System.EventHandler(this.FormMenuLoad);
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).EndInit();

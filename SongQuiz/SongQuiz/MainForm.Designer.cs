@@ -38,14 +38,14 @@ namespace SongQuiz
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.btn_ingresar = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pic_logo = new System.Windows.Forms.PictureBox();
 			this.btn_nuevo = new System.Windows.Forms.Button();
 			this.lbl_usuario = new System.Windows.Forms.Label();
 			this.lbl_contraseña = new System.Windows.Forms.Label();
 			this.txt_usuario = new System.Windows.Forms.TextBox();
 			this.txt_contraseña = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// btn_ingresar
@@ -61,16 +61,16 @@ namespace SongQuiz
 			this.btn_ingresar.UseVisualStyleBackColor = true;
 			this.btn_ingresar.Click += new System.EventHandler(this.Btn_ingresarClick);
 			// 
-			// pictureBox1
+			// pic_logo
 			// 
-			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(195, 3);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(300, 300);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-			this.pictureBox1.TabIndex = 1;
-			this.pictureBox1.TabStop = false;
+			this.pic_logo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.pic_logo.Image = ((System.Drawing.Image)(resources.GetObject("pic_logo.Image")));
+			this.pic_logo.Location = new System.Drawing.Point(195, 3);
+			this.pic_logo.Name = "pic_logo";
+			this.pic_logo.Size = new System.Drawing.Size(300, 300);
+			this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pic_logo.TabIndex = 1;
+			this.pic_logo.TabStop = false;
 			// 
 			// btn_nuevo
 			// 
@@ -144,7 +144,7 @@ namespace SongQuiz
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.MediumOrchid;
+			this.BackColor = System.Drawing.Color.CornflowerBlue;
 			this.ClientSize = new System.Drawing.Size(682, 653);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.txt_contraseña);
@@ -152,13 +152,14 @@ namespace SongQuiz
 			this.Controls.Add(this.lbl_contraseña);
 			this.Controls.Add(this.lbl_usuario);
 			this.Controls.Add(this.btn_nuevo);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.pic_logo);
 			this.Controls.Add(this.btn_ingresar);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "SongQuiz";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
@@ -168,7 +169,7 @@ namespace SongQuiz
 		private System.Windows.Forms.Label lbl_contraseña;
 		private System.Windows.Forms.Label lbl_usuario;
 		private System.Windows.Forms.Button btn_nuevo;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox pic_logo;
 		private System.Windows.Forms.Button btn_ingresar;
 		
 		void Btn_mostrar(object sender, System.Windows.Forms.MouseEventArgs e)

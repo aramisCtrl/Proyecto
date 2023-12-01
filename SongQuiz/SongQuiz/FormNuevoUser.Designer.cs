@@ -36,6 +36,7 @@ namespace SongQuiz
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNuevoUser));
 			this.lay_avatares = new System.Windows.Forms.TableLayoutPanel();
 			this.pic12 = new System.Windows.Forms.PictureBox();
 			this.pic11 = new System.Windows.Forms.PictureBox();
@@ -308,7 +309,7 @@ namespace SongQuiz
 			this.btn_confirmar.Location = new System.Drawing.Point(277, 691);
 			this.btn_confirmar.Name = "btn_confirmar";
 			this.btn_confirmar.Size = new System.Drawing.Size(174, 44);
-			this.btn_confirmar.TabIndex = 2;
+			this.btn_confirmar.TabIndex = 3;
 			this.btn_confirmar.Text = "Confirmar";
 			this.btn_confirmar.UseVisualStyleBackColor = true;
 			this.btn_confirmar.Click += new System.EventHandler(this.Btn_confirmarClick);
@@ -320,7 +321,7 @@ namespace SongQuiz
 			this.btn_cancelar.Location = new System.Drawing.Point(49, 691);
 			this.btn_cancelar.Name = "btn_cancelar";
 			this.btn_cancelar.Size = new System.Drawing.Size(174, 44);
-			this.btn_cancelar.TabIndex = 3;
+			this.btn_cancelar.TabIndex = 4;
 			this.btn_cancelar.Text = "Cancelar";
 			this.btn_cancelar.UseVisualStyleBackColor = true;
 			this.btn_cancelar.Click += new System.EventHandler(this.Btn_cancelarClick);
@@ -344,7 +345,7 @@ namespace SongQuiz
 			this.txt_confirmar_contraseña.Location = new System.Drawing.Point(249, 631);
 			this.txt_confirmar_contraseña.Name = "txt_confirmar_contraseña";
 			this.txt_confirmar_contraseña.Size = new System.Drawing.Size(222, 30);
-			this.txt_confirmar_contraseña.TabIndex = 10;
+			this.txt_confirmar_contraseña.TabIndex = 2;
 			this.txt_confirmar_contraseña.TextChanged += new System.EventHandler(this.Txt_confirmar_contraseñaTextChanged);
 			// 
 			// lbl_confirmar_contraseña
@@ -363,7 +364,7 @@ namespace SongQuiz
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.MediumOrchid;
+			this.BackColor = System.Drawing.Color.CornflowerBlue;
 			this.ClientSize = new System.Drawing.Size(767, 775);
 			this.Controls.Add(this.txt_confirmar_contraseña);
 			this.Controls.Add(this.lbl_confirmar_contraseña);
@@ -376,6 +377,7 @@ namespace SongQuiz
 			this.Controls.Add(this.lbl_usuario);
 			this.Controls.Add(this.pic_central);
 			this.Controls.Add(this.lay_avatares);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "FormNuevoUser";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -76,7 +76,6 @@ namespace SongQuiz
 				this.Show();
 			}		
 		}
-		
 	}
 }
 
