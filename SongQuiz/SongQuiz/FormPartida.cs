@@ -16,7 +16,6 @@ namespace SongQuiz
 		int puntaje = 0;
 		int opcionSeleccionada;
 		int opcionesCounter = 0;
-		int segundos = 0;
 		int segundos_countdown = 3;
 		int ronda = 0;
 		int tiempo = 1;
@@ -230,10 +229,10 @@ namespace SongQuiz
 			else
 			{
 				player.Stop();
-				MessageBox.Show("Juego completado");
+				FormScore form = new FormScore(miUsuario, puntaje, punt_tiempo);
+				form.ShowDialog();
 				string comando = miUsuario.id + " ," + puntaje + " ," + punt_tiempo + " ," + miPartida.categoria_id;
 				miConexion.EjecutarComandoSQL("exec sp_InsertOrUpdatePuntaje " + comando);
-
 				this.Close();
 			}
 		}

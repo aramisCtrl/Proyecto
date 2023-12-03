@@ -228,7 +228,7 @@ namespace SongQuiz
 			// 
 			// lbl_score
 			// 
-			this.lbl_score.Anchor = System.Windows.Forms.AnchorStyles.Right;
+			this.lbl_score.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.lbl_score.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_score.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.lbl_score.Location = new System.Drawing.Point(778, 206);

@@ -35,3 +35,4 @@ C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.ex
 C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.pdb
 C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.csprojResolveAssemblyReference.cache
 C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.FormPuntajes.resources
+C:\Users\Fiski\Documents\GitHub\Proyecto\SongQuiz\SongQuiz\obj\Debug\SongQuiz.FormScore.resources

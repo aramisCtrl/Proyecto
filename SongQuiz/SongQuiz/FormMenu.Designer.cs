@@ -36,6 +36,7 @@ namespace SongQuiz
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btn_cerrar = new System.Windows.Forms.Button();
@@ -44,18 +45,19 @@ namespace SongQuiz
 			this.pic_logo = new System.Windows.Forms.PictureBox();
 			this.pnl_botones = new System.Windows.Forms.Panel();
 			this.lbl_copyright = new System.Windows.Forms.Label();
-			this.button11 = new System.Windows.Forms.Button();
-			this.button10 = new System.Windows.Forms.Button();
-			this.button9 = new System.Windows.Forms.Button();
-			this.button8 = new System.Windows.Forms.Button();
-			this.button7 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
+			this.btn_2 = new System.Windows.Forms.Button();
+			this.btn_6 = new System.Windows.Forms.Button();
+			this.btn_4 = new System.Windows.Forms.Button();
+			this.btn_5 = new System.Windows.Forms.Button();
+			this.btn_3 = new System.Windows.Forms.Button();
+			this.btn_1 = new System.Windows.Forms.Button();
 			this.btn_mix = new System.Windows.Forms.Button();
 			this.btn_kpop = new System.Windows.Forms.Button();
 			this.btn_latino = new System.Windows.Forms.Button();
 			this.btn_rock = new System.Windows.Forms.Button();
 			this.btn_rap = new System.Windows.Forms.Button();
 			this.btn_pop = new System.Windows.Forms.Button();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pic_avatar)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
@@ -129,12 +131,12 @@ namespace SongQuiz
 			// 
 			this.pnl_botones.BackColor = System.Drawing.Color.Transparent;
 			this.pnl_botones.Controls.Add(this.lbl_copyright);
-			this.pnl_botones.Controls.Add(this.button11);
-			this.pnl_botones.Controls.Add(this.button10);
-			this.pnl_botones.Controls.Add(this.button9);
-			this.pnl_botones.Controls.Add(this.button8);
-			this.pnl_botones.Controls.Add(this.button7);
-			this.pnl_botones.Controls.Add(this.button1);
+			this.pnl_botones.Controls.Add(this.btn_2);
+			this.pnl_botones.Controls.Add(this.btn_6);
+			this.pnl_botones.Controls.Add(this.btn_4);
+			this.pnl_botones.Controls.Add(this.btn_5);
+			this.pnl_botones.Controls.Add(this.btn_3);
+			this.pnl_botones.Controls.Add(this.btn_1);
 			this.pnl_botones.Controls.Add(this.btn_mix);
 			this.pnl_botones.Controls.Add(this.btn_kpop);
 			this.pnl_botones.Controls.Add(this.btn_latino);
@@ -159,107 +161,119 @@ namespace SongQuiz
 			this.lbl_copyright.Text = "© 2023 SongQuiz. Todos los derechos reservados. Desarrollado por Aramis Terza.";
 			this.lbl_copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// button11
+			// btn_2
 			// 
-			this.button11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.button11.AutoSize = true;
-			this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.button11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button11.Location = new System.Drawing.Point(463, 334);
-			this.button11.Name = "button11";
-			this.button11.Size = new System.Drawing.Size(200, 42);
-			this.button11.TabIndex = 3;
-			this.button11.Tag = "2";
-			this.button11.Text = "Puntuaciones";
-			this.button11.UseVisualStyleBackColor = true;
-			this.button11.Click += new System.EventHandler(this.btn_puntuacionesClick);
+			this.btn_2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btn_2.AutoSize = true;
+			this.btn_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_2.BackgroundImage")));
+			this.btn_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btn_2.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btn_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btn_2.Location = new System.Drawing.Point(512, 334);
+			this.btn_2.Name = "btn_2";
+			this.btn_2.Size = new System.Drawing.Size(105, 48);
+			this.btn_2.TabIndex = 3;
+			this.btn_2.Tag = "2";
+			this.toolTip1.SetToolTip(this.btn_2, "Puntajes");
+			this.btn_2.UseVisualStyleBackColor = true;
+			this.btn_2.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
-			// button10
+			// btn_6
 			// 
-			this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button10.AutoSize = true;
-			this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.button10.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-			this.button10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button10.Location = new System.Drawing.Point(566, 724);
-			this.button10.Name = "button10";
-			this.button10.Size = new System.Drawing.Size(200, 42);
-			this.button10.TabIndex = 5;
-			this.button10.Tag = "6";
-			this.button10.Text = "Puntuaciones";
-			this.button10.UseVisualStyleBackColor = true;
-			this.button10.Click += new System.EventHandler(this.btn_puntuacionesClick);
+			this.btn_6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_6.AutoSize = true;
+			this.btn_6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_6.BackgroundImage")));
+			this.btn_6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btn_6.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btn_6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+			this.btn_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btn_6.Location = new System.Drawing.Point(665, 724);
+			this.btn_6.Name = "btn_6";
+			this.btn_6.Size = new System.Drawing.Size(105, 48);
+			this.btn_6.TabIndex = 5;
+			this.btn_6.Tag = "6";
+			this.toolTip1.SetToolTip(this.btn_6, "Puntajes");
+			this.btn_6.UseVisualStyleBackColor = true;
+			this.btn_6.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
-			// button9
+			// btn_4
 			// 
-			this.button9.AutoSize = true;
-			this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button9.Location = new System.Drawing.Point(367, 724);
-			this.button9.Name = "button9";
-			this.button9.Size = new System.Drawing.Size(200, 42);
-			this.button9.TabIndex = 4;
-			this.button9.Text = "Puntuaciones";
-			this.button9.UseVisualStyleBackColor = true;
-			this.button9.Click += new System.EventHandler(this.btn_puntuacionesClick);
+			this.btn_4.AutoSize = true;
+			this.btn_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_4.BackgroundImage")));
+			this.btn_4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btn_4.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btn_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btn_4.Location = new System.Drawing.Point(367, 724);
+			this.btn_4.Name = "btn_4";
+			this.btn_4.Size = new System.Drawing.Size(105, 48);
+			this.btn_4.TabIndex = 4;
+			this.btn_4.Tag = "4";
+			this.toolTip1.SetToolTip(this.btn_4, "Puntajes");
+			this.btn_4.UseVisualStyleBackColor = true;
+			this.btn_4.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
-			// button8
+			// btn_5
 			// 
-			this.button8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-			this.button8.AutoSize = true;
-			this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.button8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button8.Location = new System.Drawing.Point(472, 724);
-			this.button8.Name = "button8";
-			this.button8.Size = new System.Drawing.Size(200, 42);
-			this.button8.TabIndex = 9;
-			this.button8.Tag = "5";
-			this.button8.Text = "Puntuaciones";
-			this.button8.UseVisualStyleBackColor = true;
-			this.button8.Click += new System.EventHandler(this.btn_puntuacionesClick);
+			this.btn_5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+			this.btn_5.AutoSize = true;
+			this.btn_5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_5.BackgroundImage")));
+			this.btn_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btn_5.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btn_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btn_5.Location = new System.Drawing.Point(512, 724);
+			this.btn_5.Name = "btn_5";
+			this.btn_5.Size = new System.Drawing.Size(105, 48);
+			this.btn_5.TabIndex = 9;
+			this.btn_5.Tag = "5";
+			this.toolTip1.SetToolTip(this.btn_5, "Puntajes");
+			this.btn_5.UseVisualStyleBackColor = true;
+			this.btn_5.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
-			// button7
+			// btn_3
 			// 
-			this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button7.AutoSize = true;
-			this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button7.Location = new System.Drawing.Point(566, 334);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(200, 42);
-			this.button7.TabIndex = 11;
-			this.button7.Tag = "3";
-			this.button7.Text = "Puntuaciones";
-			this.button7.UseVisualStyleBackColor = true;
-			this.button7.Click += new System.EventHandler(this.btn_puntuacionesClick);
+			this.btn_3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btn_3.AutoSize = true;
+			this.btn_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_3.BackgroundImage")));
+			this.btn_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btn_3.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btn_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btn_3.Location = new System.Drawing.Point(665, 334);
+			this.btn_3.Name = "btn_3";
+			this.btn_3.Size = new System.Drawing.Size(105, 48);
+			this.btn_3.TabIndex = 11;
+			this.btn_3.Tag = "3";
+			this.toolTip1.SetToolTip(this.btn_3, "Puntajes");
+			this.btn_3.UseVisualStyleBackColor = true;
+			this.btn_3.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
-			// button1
+			// btn_1
 			// 
-			this.button1.AutoSize = true;
-			this.button1.BackColor = System.Drawing.Color.Transparent;
-			this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.button1.Location = new System.Drawing.Point(367, 334);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(200, 42);
-			this.button1.TabIndex = 1;
-			this.button1.Tag = "1";
-			this.button1.Text = "Puntuaciones";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.btn_puntuacionesClick);
+			this.btn_1.AutoSize = true;
+			this.btn_1.BackColor = System.Drawing.SystemColors.ButtonFace;
+			this.btn_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_1.BackgroundImage")));
+			this.btn_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.btn_1.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btn_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btn_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.btn_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.btn_1.Location = new System.Drawing.Point(367, 334);
+			this.btn_1.Name = "btn_1";
+			this.btn_1.Size = new System.Drawing.Size(105, 48);
+			this.btn_1.TabIndex = 1;
+			this.btn_1.Tag = "1";
+			this.toolTip1.SetToolTip(this.btn_1, "Puntajes");
+			this.btn_1.UseVisualStyleBackColor = false;
+			this.btn_1.Click += new System.EventHandler(this.btn_puntuacionesClick);
 			// 
 			// btn_mix
 			// 
@@ -268,7 +282,7 @@ namespace SongQuiz
 			this.btn_mix.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_mix.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_mix.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_mix.Location = new System.Drawing.Point(512, 418);
+			this.btn_mix.Location = new System.Drawing.Point(563, 418);
 			this.btn_mix.Name = "btn_mix";
 			this.btn_mix.Size = new System.Drawing.Size(300, 300);
 			this.btn_mix.TabIndex = 10;
@@ -302,7 +316,7 @@ namespace SongQuiz
 			this.btn_latino.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_latino.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_latino.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_latino.Location = new System.Drawing.Point(512, 28);
+			this.btn_latino.Location = new System.Drawing.Point(563, 28);
 			this.btn_latino.Name = "btn_latino";
 			this.btn_latino.Size = new System.Drawing.Size(300, 300);
 			this.btn_latino.TabIndex = 4;
@@ -331,7 +345,7 @@ namespace SongQuiz
 			this.btn_rap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.btn_rap.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_rap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_rap.Location = new System.Drawing.Point(317, 418);
+			this.btn_rap.Location = new System.Drawing.Point(275, 418);
 			this.btn_rap.Name = "btn_rap";
 			this.btn_rap.Size = new System.Drawing.Size(300, 300);
 			this.btn_rap.TabIndex = 6;
@@ -347,7 +361,7 @@ namespace SongQuiz
 			this.btn_pop.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btn_pop.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
 			this.btn_pop.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-			this.btn_pop.Location = new System.Drawing.Point(317, 28);
+			this.btn_pop.Location = new System.Drawing.Point(266, 28);
 			this.btn_pop.Name = "btn_pop";
 			this.btn_pop.Size = new System.Drawing.Size(300, 300);
 			this.btn_pop.TabIndex = 0;
@@ -378,6 +392,7 @@ namespace SongQuiz
 			this.pnl_botones.PerformLayout();
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.Label lbl_copyright;
 		private System.Windows.Forms.Button btn_cerrar;
 		private System.Windows.Forms.PictureBox pic_avatar;
@@ -388,12 +403,12 @@ namespace SongQuiz
 		private System.Windows.Forms.Button btn_latino;
 		private System.Windows.Forms.Button btn_kpop;
 		private System.Windows.Forms.Button btn_mix;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button7;
-		private System.Windows.Forms.Button button8;
-		private System.Windows.Forms.Button button9;
-		private System.Windows.Forms.Button button10;
-		private System.Windows.Forms.Button button11;
+		private System.Windows.Forms.Button btn_1;
+		private System.Windows.Forms.Button btn_3;
+		private System.Windows.Forms.Button btn_5;
+		private System.Windows.Forms.Button btn_4;
+		private System.Windows.Forms.Button btn_6;
+		private System.Windows.Forms.Button btn_2;
 		private System.Windows.Forms.Panel pnl_botones;
 		private System.Windows.Forms.PictureBox pic_logo;
 		private System.Windows.Forms.Panel panel1;

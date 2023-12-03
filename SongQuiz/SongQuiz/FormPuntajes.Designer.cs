@@ -59,9 +59,9 @@ namespace SongQuiz
 			// 
 			this.pic_2.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.pic_2.BackColor = System.Drawing.Color.Transparent;
-			this.pic_2.Location = new System.Drawing.Point(69, 34);
+			this.pic_2.Location = new System.Drawing.Point(0, 49);
 			this.pic_2.Name = "pic_2";
-			this.pic_2.Size = new System.Drawing.Size(100, 112);
+			this.pic_2.Size = new System.Drawing.Size(152, 90);
 			this.pic_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_2.TabIndex = 1;
 			this.pic_2.TabStop = false;
@@ -70,9 +70,9 @@ namespace SongQuiz
 			// 
 			this.pic_3.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.pic_3.BackColor = System.Drawing.Color.Transparent;
-			this.pic_3.Location = new System.Drawing.Point(281, 56);
+			this.pic_3.Location = new System.Drawing.Point(306, 78);
 			this.pic_3.Name = "pic_3";
-			this.pic_3.Size = new System.Drawing.Size(100, 112);
+			this.pic_3.Size = new System.Drawing.Size(144, 91);
 			this.pic_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_3.TabIndex = 2;
 			this.pic_3.TabStop = false;
@@ -81,9 +81,9 @@ namespace SongQuiz
 			// 
 			this.pic_1.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.pic_1.BackColor = System.Drawing.Color.Transparent;
-			this.pic_1.Location = new System.Drawing.Point(175, 12);
+			this.pic_1.Location = new System.Drawing.Point(150, 0);
 			this.pic_1.Name = "pic_1";
-			this.pic_1.Size = new System.Drawing.Size(100, 112);
+			this.pic_1.Size = new System.Drawing.Size(150, 94);
 			this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_1.TabIndex = 3;
 			this.pic_1.TabStop = false;
@@ -92,9 +92,9 @@ namespace SongQuiz
 			// 
 			this.pic_podio.Anchor = System.Windows.Forms.AnchorStyles.Top;
 			this.pic_podio.Image = ((System.Drawing.Image)(resources.GetObject("pic_podio.Image")));
-			this.pic_podio.Location = new System.Drawing.Point(3, 31);
+			this.pic_podio.Location = new System.Drawing.Point(0, 34);
 			this.pic_podio.Name = "pic_podio";
-			this.pic_podio.Size = new System.Drawing.Size(444, 269);
+			this.pic_podio.Size = new System.Drawing.Size(453, 269);
 			this.pic_podio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pic_podio.TabIndex = 4;
 			this.pic_podio.TabStop = false;
@@ -117,37 +117,35 @@ namespace SongQuiz
 			// lbl_3
 			// 
 			this.lbl_3.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_3.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.lbl_3.Location = new System.Drawing.Point(284, 154);
+			this.lbl_3.Location = new System.Drawing.Point(306, 244);
 			this.lbl_3.Name = "lbl_3";
-			this.lbl_3.Size = new System.Drawing.Size(166, 23);
+			this.lbl_3.Size = new System.Drawing.Size(144, 28);
 			this.lbl_3.TabIndex = 7;
-			this.lbl_3.Text = "lbl3";
+			this.lbl_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lbl_1
 			// 
 			this.lbl_1.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_1.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.lbl_1.Location = new System.Drawing.Point(175, 112);
+			this.lbl_1.Location = new System.Drawing.Point(150, 240);
 			this.lbl_1.Name = "lbl_1";
-			this.lbl_1.Size = new System.Drawing.Size(100, 23);
+			this.lbl_1.Size = new System.Drawing.Size(150, 32);
 			this.lbl_1.TabIndex = 6;
-			this.lbl_1.Text = "lbl1";
-			this.lbl_1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.lbl_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lbl_2
 			// 
 			this.lbl_2.BackColor = System.Drawing.Color.Transparent;
-			this.lbl_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_2.Font = new System.Drawing.Font("Gill Sans Ultra Bold Condensed", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lbl_2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.lbl_2.Location = new System.Drawing.Point(0, 132);
+			this.lbl_2.Location = new System.Drawing.Point(3, 244);
 			this.lbl_2.Name = "lbl_2";
-			this.lbl_2.Size = new System.Drawing.Size(166, 23);
+			this.lbl_2.Size = new System.Drawing.Size(149, 28);
 			this.lbl_2.TabIndex = 5;
-			this.lbl_2.Text = "lbl2";
-			this.lbl_2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			this.lbl_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// panel2
 			// 

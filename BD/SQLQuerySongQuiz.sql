@@ -264,6 +264,8 @@ insert into opciones (opci_descripcion) values
 ('MVSK'),('See The Light'),('Up!'),
 ('TING TING TING (with Oliver Heldens)'),('THAT''S A NO NO'),('NOBODY LIKE YOU')
 
+select * from opciones
+
 -- Crear una variable para el bucle
 DECLARE @CancionID INT = 1;
 DECLARE @OpcionID INT = 1;
@@ -321,9 +323,9 @@ exec sp_ObtenerOpciones 7
 ALTER TABLE canciones
 ADD canc_portada_blur_direccion VARCHAR(255)
 
-UPDATE canciones
-SET canc_portada_blur_direccion = '\Imagenes\Portadas\Pop\Dark Horse (feat. Juicy J)_blur.jpg' 
-Where canc_id = 9
+UPDATE opciones
+SET opci_descripcion = 'Won''t Bite (feat. Smino)' 
+Where opci_id = 220
 
 select * from canciones
 
@@ -431,27 +433,48 @@ BEGIN
 	LEFT JOIN usuarios ON usua_id = punt_usua_id
 	LEFT JOIN avatares ON avat_id = usua_avat_id
 	WHERE punt_cate_id = @categoria
-	ORDER BY punt_puntaje DESC, punt_tiempo DESC;
+	ORDER BY punt_puntaje DESC, punt_tiempo;
 END
+
 
 
 CREATE PROCEDURE sp_InsertOrUpdatePuntaje
-	@usua_id INT,
-	@punt_puntaje INT,
-	@punt_tiempo VARCHAR(255),
-	@punt_cate_id INT
+    @usua_id INT,
+    @punt_puntaje INT,
+    @punt_tiempo VARCHAR(255),
+    @punt_cate_id INT
 AS
 BEGIN
-	IF EXISTS (SELECT 1 FROM puntajes WHERE punt_usua_id = @usua_id AND punt_cate_id = @punt_cate_id)
-	BEGIN
-		UPDATE puntajes
-		SET punt_puntaje = CASE WHEN @punt_puntaje > punt_puntaje THEN @punt_puntaje ELSE punt_puntaje END,
-			punt_tiempo = CASE WHEN @punt_tiempo > punt_tiempo THEN @punt_tiempo ELSE punt_tiempo END
-		WHERE punt_usua_id = @usua_id AND punt_cate_id = @punt_cate_id;
-	END
-	ELSE
-	BEGIN
-		INSERT INTO puntajes (punt_usua_id, punt_puntaje, punt_tiempo, punt_cate_id)
-		VALUES (@usua_id, @punt_puntaje, @punt_tiempo, @punt_cate_id);
-	END
+    IF @punt_puntaje > 0  
+    BEGIN
+        IF EXISTS (SELECT 1 FROM puntajes WHERE punt_usua_id = @usua_id AND punt_cate_id = @punt_cate_id)
+        BEGIN
+           
+            DECLARE @existing_puntaje INT;
+            DECLARE @existing_tiempo VARCHAR(255);
+
+            SELECT @existing_puntaje = punt_puntaje, @existing_tiempo = punt_tiempo
+            FROM puntajes
+            WHERE punt_usua_id = @usua_id AND punt_cate_id = @punt_cate_id;
+
+            IF @punt_puntaje > @existing_puntaje
+            BEGIN
+                
+                UPDATE puntajes
+                SET punt_puntaje = @punt_puntaje,
+                    punt_tiempo = CASE WHEN @punt_tiempo > @existing_tiempo THEN @punt_tiempo ELSE @existing_tiempo END
+                WHERE punt_usua_id = @usua_id AND punt_cate_id = @punt_cate_id;
+            END
+            
+        END
+        ELSE
+        BEGIN
+        
+            INSERT INTO puntajes (punt_usua_id, punt_puntaje, punt_tiempo, punt_cate_id)
+            VALUES (@usua_id, @punt_puntaje, @punt_tiempo, @punt_cate_id);
+        END
+    END
+    
 END
+
+
