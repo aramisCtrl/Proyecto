@@ -15,6 +15,7 @@ create table canciones(
 	canc_id int identity(1,1) primary key not null,
 	canc_direccion varchar(255) not null,
 	canc_portada_direccion varchar(255) not null,
+	canc_portada_blur_direccion varchar(255) not null,
 	canc_nombre varchar(255) not null,
 	canc_artista varchar(255) not null,
 	canc_cate_id int not null
@@ -47,8 +48,6 @@ create table opciones(
 
 insert into categorias(cate_descripcion) values ('Pop'),('Rock'),('Latino'),('Rap'),('Kpop')
 insert into categorias(cate_descripcion) values ('Mix')
-
-select * from canciones
 
 insert into canciones(canc_nombre, canc_artista, canc_direccion, canc_cate_id, canc_portada_direccion) values
 ('7 rings', 'Ariana Grande', '\Canciones\Pop\7 rings.wav',1,'\Imagenes\Portadas\Pop\7 rings.jpg'),
@@ -160,7 +159,7 @@ insert into canciones(canc_nombre, canc_artista, canc_direccion, canc_cate_id, c
 ('WA DA DA', 'Kep1er', '\Canciones\Kpop\WA DA DA.wav',5,'\Imagenes\Portadas\Kpop\WA DA DA.jpg'),
 ('WANNABE', 'ITZY', '\Canciones\Kpop\WANNABE.wav',5,'\Imagenes\Portadas\Kpop\WANNABE.jpg')
 
-select * from opciones
+select * from canciones
 
 insert into opciones (opci_descripcion) values
 ('thank u, next'),('imagine'),('bloodline'),
@@ -264,29 +263,21 @@ insert into opciones (opci_descripcion) values
 ('MVSK'),('See The Light'),('Up!'),
 ('TING TING TING (with Oliver Heldens)'),('THAT''S A NO NO'),('NOBODY LIKE YOU')
 
-select * from opciones
 
--- Crear una variable para el bucle
 DECLARE @CancionID INT = 1;
 DECLARE @OpcionID INT = 1;
 
--- Iniciar el bucle
 WHILE @CancionID <= 100
 BEGIN
-    -- Insertar valores en la tabla
     INSERT INTO canciones_opciones(caop_canc_id, caop_opci_id) 
     VALUES (@CancionID, @OpcionID),
            (@CancionID, @OpcionID + 1),
            (@CancionID, @OpcionID + 2);
 
-    -- Actualizar las variables para la siguiente iteración
     SET @CancionID = @CancionID + 1;
     SET @OpcionID = @OpcionID + 3;
 END;
 
-select canc_nombre, opci_descripcion from canciones
-inner join canciones_opciones on caop_canc_id = canc_id
-inner join opciones on opci_id = caop_opci_id
 
 create procedure sp_ObtenerCanciones(
     @categoria int
@@ -307,6 +298,7 @@ begin
     order by NEWID();
 end
 
+
 create procedure sp_ObtenerOpciones(
 	@id int
 )
@@ -318,16 +310,7 @@ left join canciones on canc_id = caop_canc_id
 where caop_canc_id = @id
 end
 
-exec sp_ObtenerOpciones 7
 
-ALTER TABLE canciones
-ADD canc_portada_blur_direccion VARCHAR(255)
-
-UPDATE opciones
-SET opci_descripcion = 'Won''t Bite (feat. Smino)' 
-Where opci_id = 220
-
-select * from canciones
 
 CREATE PROCEDURE sp_ValidarUsuario(
     @NombreUsuario NVARCHAR(100),
@@ -335,29 +318,24 @@ CREATE PROCEDURE sp_ValidarUsuario(
 )
 AS
 BEGIN
-    -- Declarar una variable para almacenar el ID de rol del usuario
     DECLARE @usua_id INT;
 
-    -- Intentar encontrar un usuario con el nombre y contraseña proporcionados
     SELECT @usua_id = usua_id
     FROM usuarios
     WHERE usua_nombre = @NombreUsuario
       AND usua_contraseña = @Contraseña;
 
-    -- Comprobar si se encontró un usuario válido
     IF @usua_id IS NOT NULL
     BEGIN
-        -- Retornar el ID de rol del usuario
         SELECT @usua_id AS usua_id;
     END
     ELSE
     BEGIN
-        -- No se encontró un usuario válido, retornar 0
         SELECT 0 AS usua_id;
     END
 END;
 
-insert into usuarios(usua_nombre, usua_contraseña, usua_avat_id) values ('cachiflop', 'AramisYCiro123_', 10)
+
 
 create procedure sp_ObtenerAvatares
 as
@@ -365,7 +343,7 @@ begin
 select avat_direccion from avatares
 end
 
-exec sp_ObtenerAvatares
+
 
 INSERT INTO avatares (avat_direccion) VALUES 
 ('\Imagenes\Avatares\avatar1.jpg'),
@@ -385,20 +363,19 @@ CREATE PROCEDURE sp_CheckUsuarios
     @nombre NVARCHAR(255)
 AS
 BEGIN
-    -- Variable para almacenar el resultado (true o false)
     DECLARE @usuarioExistente BIT;
 
-    -- Verificar si existe un usuario con el nombre proporcionado
     IF EXISTS (SELECT 1 FROM usuarios WHERE usua_nombre = @nombre)
-        SET @usuarioExistente = 1; -- Usuario encontrado
+        SET @usuarioExistente = 1;
     ELSE
-        SET @usuarioExistente = 0; -- Usuario no encontrado
+        SET @usuarioExistente = 0;
 
-    -- Devolver el resultado
     SELECT @usuarioExistente AS 'UsuarioExistente';
 END;
 
 select * from usuarios
+
+
 
 create procedure sp_ObtenerUsuario(
 	@nombre NVARCHAR(255)
@@ -408,18 +385,6 @@ begin
 select usua_id, usua_nombre, avat_direccion from usuarios
 left join avatares on avat_id = usua_avat_id
 where usua_nombre = @nombre
-end
-
-create procedure sp_ObtenerPuntajes(
-	@id_categoria int 
-)
-as
-begin
-select usua_nombre, usua_avat_id, punt_puntaje, punt_tiempo from usuarios
-left join puntajes on punt_usua_id = punt_usua_id
-left join categorias on cate_id = punt_cate_id
-where punt_cate_id = @id_categoria
-order by punt_puntaje, punt_tiempo
 end
 
 CREATE PROCEDURE sp_LlenarGrilla
@@ -477,4 +442,77 @@ BEGIN
     
 END
 
+insert into canciones(canc_nombre, canc_artista, canc_direccion, canc_cate_id, canc_portada_direccion, canc_portada_blur_direccion) values
+('Heart Attack', 'Demi Lovato', '\Canciones\Pop\Heart Attack.wav',1,'\Imagenes\Portadas\Pop\Heart Attack.jpg', '\Imagenes\Portadas\Pop\Heart Attack_blur.jpg'),
+('Heather', 'Conan Gray', '\Canciones\Pop\Heather.wav',1,'\Imagenes\Portadas\Pop\Heather.jpg', '\Imagenes\Portadas\Pop\Heather_blur.jpg'),
+('I Love It (feat. Charli XCX)', 'Icona Pop, Charli XCX', '\Canciones\Pop\I Love It (feat. Charli XCX).wav',1,'\Imagenes\Portadas\Pop\I Love It (feat. Charli XCX).jpg', '\Imagenes\Portadas\Pop\I Love It (feat. Charli XCX)_blur.jpg'),
+('Sweet but Psycho', 'Ava Max', '\Canciones\Pop\Sweet but Psycho.wav',1,'\Imagenes\Portadas\Pop\Sweet but Psycho.jpg', '\Imagenes\Portadas\Pop\Sweet but Psycho_blur.jpg'),
+('Thumbs', 'Sabrina Carpenter', '\Canciones\Rock\Thumbs.wav',2,'\Imagenes\Portadas\Rock\Thumbs.jpg', '\Imagenes\Portadas\Rock\Thumbs_blur.jpg'),
+('Californication', 'Red Hot Chili Peppers', '\Canciones\Rock\Californication.wav',2,'\Imagenes\Portadas\Rock\Californication.jpg', '\Imagenes\Portadas\Rock\Californication_blur.jpg'),
+('Comfortably Numb', 'Pink Floyd', '\Canciones\Rock\Comfortably Numb.wav',2,'\Imagenes\Portadas\Rock\Comfortably Numb.jpg', '\Imagenes\Portadas\Rock\Comfortably Numb_blur.jpg'),
+('Hablando De La Libertad', 'La Renga', '\Canciones\Rock\Hablando De La Libertad.wav',2,'\Imagenes\Portadas\Rock\Hablando De La Libertad.jpg', '\Imagenes\Portadas\Rock\Hablando De La Libertad_blur.jpg'),
+('Mariposa tecknicolor', 'Fito Paez', '\Canciones\Rock\Mariposa tecknicolor.wav',2,'\Imagenes\Portadas\Rock\Mariposa tecknicolor.jpg', '\Imagenes\Portadas\Rock\Mariposa tecknicolor_blur.jpg'),
+('Money', 'Pink Floyd', '\Canciones\Rock\Money.wav',2,'\Imagenes\Portadas\Rock\Money.jpg', '\Imagenes\Portadas\Rock\Money_blur.jpg'),
+('Ciudad Mágica', 'Tan Bionica', '\Canciones\Latino\Ciudad Mágica.wav',3,'\Imagenes\Portadas\Latino\Ciudad Mágica.jpg', '\Imagenes\Portadas\Latino\Ciudad Mágica_blur.jpg'),
+('Dueles', 'Jesse & Joy', '\Canciones\Latino\Dueles.wav',3,'\Imagenes\Portadas\Latino\Dueles.jpg', '\Imagenes\Portadas\Latino\Dueles_blur.jpg'),
+('La Camisa Negra', 'Juanes', '\Canciones\Latino\La Camisa Negra.wav',3,'\Imagenes\Portadas\Latino\La Camisa Negra.jpg', '\Imagenes\Portadas\Latino\La Camisa Negra_blur.jpg'),
+('Loca (feat. El Cata)', 'Shakira, El Cata', '\Canciones\Latino\Loca (feat. El Cata).wav',3,'\Imagenes\Portadas\Latino\Loca (feat. El Cata).jpg', '\Imagenes\Portadas\Latino\Loca (feat. El Cata)_blur.jpg'),
+('Piel Morena', 'Thalia', '\Canciones\Latino\Piel Morena.wav',3,'\Imagenes\Portadas\Latino\Piel Morena.jpg', '\Imagenes\Portadas\Latino\Piel Morena_blur.jpg'),
+('Princess Diana (with Nicki Minaj)', 'Ice Spice, Nicki Minaj', '\Canciones\Rap\Princess Diana (with Nicki Minaj).wav',4,'\Imagenes\Portadas\Rap\Princess Diana (with Nicki Minaj).jpg', '\Imagenes\Portadas\Rap\Princess Diana (with Nicki Minaj)_blur.jpg'),
+('Rap God', 'Eminem', '\Canciones\Rap\Rap God.wav',4,'\Imagenes\Portadas\Rap\Rap God.jpg', '\Imagenes\Portadas\Rap\Rap God_blur.jpg'),
+('Sally Walker', 'Iggy Azalea', '\Canciones\Rap\Sally Walker.wav',4,'\Imagenes\Portadas\Rap\Sally Walker.jpg', '\Imagenes\Portadas\Rap\Sally Walker_blur.jpg'),
+('Still D.R.E.', 'Dr. Dre, Snoop Dogg', '\Canciones\Rap\Still D.R.E..wav',4,'\Imagenes\Portadas\Rap\Still D.R.E..jpg', '\Imagenes\Portadas\Rap\Still D.R.E._blur.jpg'),
+('TROLLZ', '6ix9ine, Nicki Minaj', '\Canciones\Rap\TROLLZ.wav',4,'\Imagenes\Portadas\Rap\TROLLZ.jpg', '\Imagenes\Portadas\Rap\TROLLZ_blur.jpg'),
+('Cupid - Twin Ver.', 'FIFTY FIFTY', '\Canciones\Kpop\Cupid - Twin Ver..wav',5,'\Imagenes\Portadas\Kpop\Cupid - Twin Ver..jpg', '\Imagenes\Portadas\Kpop\Cupid - Twin Ver._blur.jpg'),
+('Drama', 'aespa', '\Canciones\Kpop\Drama.wav',5,'\Imagenes\Portadas\Kpop\Drama.jpg', '\Imagenes\Portadas\Kpop\Drama_blur.jpg'),
+('RUN2U', 'STAYC', '\Canciones\Kpop\RUN2U.wav',5,'\Imagenes\Portadas\Kpop\RUN2U.jpg', '\Imagenes\Portadas\Kpop\RUN2U_blur.jpg'),
+('Secret Story of the Swan', 'IZ*ONE', '\Canciones\Kpop\Secret Story of the Swan.wav',5,'\Imagenes\Portadas\Kpop\Secret Story of the Swan.jpg', '\Imagenes\Portadas\Kpop\Secret Story of the Swan_blur.jpg'),
+('How You Like That', 'BLACKPINK', '\Canciones\Kpop\How You Like That.wav',5,'\Imagenes\Portadas\Kpop\How You Like That.jpg', '\Imagenes\Portadas\Kpop\How You Like That_blur.jpg')
+
+
+
+insert into opciones (opci_descripcion) values
+('Really Don''t Care'),('Neon Lights'),('Warrior'),
+('Maniac'),('Wish You Were Sober'),('The Story'),
+('All Night'),('We Got the World'),('Girlfriend'),
+('Kings & Queens'),('My Head & My Heart'),('So Am I'),
+('On Purpose'),('Shadows'),('Run and Hide'),
+('Otherside'),('Scar Tissue'),('Around the World'),
+('Hey You'),('Mother'),('Another Brick in the Wall, Pt. 2'),
+('Balada Del Diablo y La Muerte'),('El Final Es En Donde Partí'),('Veneno'),
+('Circo beat'),('Normal 1'),('Tema de Piluso'),
+('Time'),('Breathe (In the Air)'),('The Great Gig in the Sky'),
+('La Melodía de Dios'),('Mis Noches de Enero'),('Tus Ojos Mil'),
+('Me Soltaste'),('Ecos De Amor'),('No soy una de esas (feat. Alejandro Sanz)'),
+('Nada Valgo Sin Tu Amor'),('Volverte A Ver'),('Para Tu Amor'),
+('Rabiosa (feat. El Cata)'),('Addicted to You'),('Antes de las Seis'),
+('Gracias A Dios'),('Maria La Del Diablo'),('Amandote'),
+('Barbie World (with Aqua) [From Barbie The Album]'),('Pretty Girl (with Rema)'),('Butterfly Ku'),
+('The Monster'),('Headlights'),('Beautiful Pain'),
+('Started'),('Fuck It Up (feat. Kash Doll)'),('Just Wanna'),
+('The Next Episode'),('Forgot About Dre'),('The Watcher'),
+('GOOBA'),('LOCKED UP, PT. 2'),('TUTU'),
+('Tell Me'),('Lovin'' Me'),('Higher'),
+('Better Things'),('Trick or Trick'),('Don''t Blink'),
+('YOUNG LUV'),('SAME SAME'),('BUTTERFLY'),
+('Merry-Go-Round'),('Pretty'),('With*One'),
+('Ice Cream (with Selena Gomez)'),('Lovesick Girls'),('Pretty Savage')
+
+
+
+
+DECLARE @CancionID INT = 101;
+DECLARE @OpcionID INT = 301;
+
+
+WHILE @CancionID <= 125
+BEGIN
+    INSERT INTO canciones_opciones(caop_canc_id, caop_opci_id) 
+    VALUES (@CancionID, @OpcionID),
+           (@CancionID, @OpcionID + 1),
+           (@CancionID, @OpcionID + 2);
+
+    SET @CancionID = @CancionID + 1;
+    SET @OpcionID = @OpcionID + 3;
+END;
 
