@@ -29,7 +29,7 @@ namespace SongQuiz
 			pic_avatar.Image = Image.FromFile(@""+path+miUsuario.avatar);
 			lbl_nombre.Text = miUsuario.nombre;
 			lbl_puntaje.Text = "Puntaje: "+puntaje;
-			lbl_tiempo.Text = "Tiempo: "+tiempo+"""";
+			lbl_tiempo.Text = "Tiempo: "+tiempo+"s.";
 		} 
 		
 		void Btn_aceptarClick(object sender, EventArgs e)

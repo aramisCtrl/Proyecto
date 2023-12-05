@@ -81,7 +81,7 @@ namespace SongQuiz
 					try
 					{
 						miConexion.EjecutarComandoSQL("insert into usuarios (usua_nombre, usua_contraseña, usua_avat_id) values ('"+nombre+"', '"+contraseña+"', "+avatar+")");
-						MessageBox.Show("Usuario creado con éxito", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						MessageBox.Show("Usuario creado con éxito", "Usuario Creado", MessageBoxButtons.OK);
 						this.Close();
 					}
 					
